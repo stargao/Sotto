@@ -1,0 +1,246 @@
+body {
+    height: 100%;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+* {
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-touch-callout:none;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.clear {
+    display: block;
+    clear: both;
+}
+
+.login-page h1 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.login-page h4 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.order-list {
+
+}
+
+.order-list li a {
+    text-decoration: none;
+}
+
+.order-list li a h2 {
+    float: left;
+    width: 25%;
+    height: 1.6rem;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.6rem;
+    color: #666!important;
+    margin: 0;
+}
+
+.order-list li a h2 span {
+    font-size: 0.6rem;
+    color: #666!important;
+}
+
+.order-list li a p {
+    float: left;
+    width: 70%;
+    overflow: hidden;
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+    color: #333!important;
+}
+
+span.order-time {
+    font-size: 0.8rem;
+    color: #999!important;
+}
+
+span.order-status {
+    padding-left: 1rem;
+    font-size: 0.8rem;
+}
+
+/*Order Detail Page Style*/
+.order-detail-page .add-btn {
+    width: 60px;
+    height: 36px;
+    padding: 0;
+    font-size: 14px;
+    text-align: right;
+    line-height: 36px;
+}
+
+.order-detail-page .add-btn.ui-btn-icon-left::after {
+    left: 0em!important;
+}
+
+.order-detail-page .order-detail-list {
+    padding-top: 20px;
+}
+
+.order-detail-page .order-info-line {
+    height: 25px;
+    padding: 0 1rem;
+}
+
+.order-detail-page .order-info-line h4.desk-num {
+    float: left;
+    font-size: 16px;
+    line-height: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.order-detail-page .order-info-line h4.desk-num span {
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666;
+}
+
+.order-detail-page .order-info-line span {
+    float: left;
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px;
+    line-height: 25px;
+}
+
+.order-detail-page .order-info-line span.order-time {
+    color: #666;
+}
+
+.order-detail-page .order-info-line span.order-new {
+    color: #4a87ee;
+}
+
+.order-detail-page .order-content-line {
+    height: 40px;
+    padding: 0 0 0 1rem;
+    overflow: hidden;
+    color: #333;
+}
+
+.order-detail-page .order-content-line p.dishes-name {
+    float: left;
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    font-size: 14px;
+    line-height: 40px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.order-detail-page .order-content-line p.dishes-num {
+    float: left;
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.order-detail-page .order-content-line .ctrl-wrap {
+    float: right;
+    display: inline-block;
+    width: 50%;
+    height: 40px;
+}
+
+.order-detail-page .order-content-line .two-buttons a {
+    float: right;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: -1px -1px 0 0;
+    padding: 0;
+}
+
+.order-detail-page .order-content-line .change-number {
+    width: 55%;
+}
+
+.order-detail-page .order-content-line .change-number a {
+    float: right;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: -1px -1px 0 0;
+    padding: 0;
+}
+
+.order-detail-page .order-content-line .change-number p.dishes-num {
+    float: right;
+    display: inline-block;
+    width: 41px;
+    height: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.order-detail-page .order-content-line .del-item {
+    width: 55%;
+}
+
+.order-detail-page .order-content-line .del-item a {
+    float: right;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: -1px -1px 0 0;
+    padding: 0;
+}
+
+.order-detail-page .order-content-line .del-item p.del-msg {
+    float: right;
+    display: inline-block;
+    width: 41px;
+    height: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+    font-size: 12px;
+    color: #f18835;
+}
+
+.order-detail-page .finished-line {
+    background: #ececec;
+}
+
+.order-detail-page .finished-line p {
+    color: #666;
+    text-decoration: line-through;
+}
+
+.order-detail-page .finished-line span.finished-status {
+    float: right;
+    display: inline-block;
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+}

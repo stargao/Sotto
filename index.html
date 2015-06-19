@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" href="css/jquery.mobile.ios.theme.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <title>乐摇肴后台管理系统</title>
+</head>
+<body>
+    <div data-role="page" class="login-page">
+        <!--div data-role="header" data-theme="d"></div-->
+        <div data-role="content">
+            <h1>欢迎使用乐摇肴后台管理系统</h1>
+            <h4>v0.1</h4>
+            <form>
+                <ul data-role="listview">
+                    <li data-role="fieldcontain">
+                        <label>用户名:</label>
+                        <input data-corners="false" id="user-name" type="text" value="" data-clear-btn-text="" data-clear-btn="true" placeholder="">
+                    </li>
+                    <li data-role="fieldcontain">
+                        <label>密码:</label>
+                        <input data-corners="false" id="user-pwd" type="password" value="" data-clear-btn-text="" data-clear-btn="true" placeholder="">
+                    </li>
+                    <button type="submit" class="ui-btn ui-btn-d">登录</button>
+                    <a href="#" class="ui-btn">忘记密码?</a>
+                    <a href="main-page.html" class="ui-btn" data-transition="flip">下一页</a>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.mobile.js"></script>
+</body>
+</html>
