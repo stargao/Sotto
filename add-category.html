@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" href="css/jquery.mobile.ios.theme.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <title>乐摇肴后台管理系统</title>
+</head>
+<body>
+    <div data-role="page" class="add-category-page">
+        <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
+            <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
+            <h1 class="header-title">新增分类</h1>
+            <!--a href="#" class="ui-btn-right top-right-btn">保 存</a-->
+        </div>
+        <div data-role="content">
+            <div class="single-line-form">
+                <form>
+                    <label for="add-category">新增一个分类:</label>
+                    <input type="text" name="add-category" id="add-category" value="">
+                    <button class="ui-outline ui-btn ui-btn-d ui-btn-inline ui-mini">保 存</button>
+                </form>
+                <div class="clear"></div>
+            </div>
+            <ul data-role="listview" class="ui-listview list-with-button">
+                <li>
+                    <p>固定消费类</p>
+                    <a class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    <a class="ui-outline ui-btn ui-btn-b ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    <span class="clear"></span>
+                </li>
+                <li>
+                    <p>招牌菜</p>
+                    <a class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    <a class="ui-outline ui-btn ui-btn-b ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    <span class="clear"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.mobile.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" href="css/jquery.mobile.ios.theme.css" />
+        <link rel="stylesheet" href="css/app.css" />
+    </head>
+<body>
+    <div data-role="page" data-close-btn="none" data-dialog="true">
+        <div data-role="header">
+            <h1>修改桌号</h1>
+        </div>
+
+        <div role="main" class="ui-content" id="change-number-frame">
+            <form>
+                <label for="change-desk-num">输入要添加的桌号数量:</label>
+                <input type="text" name="change-desk-num" id="change-desk-num" value="">
+                <button class="ui-btn ui-btn-d ui-btn-block ui-mini">修改</button>
+                <a href="#" class="ui-outline ui-btn-d ui-btn ui-btn-block ui-mini" data-rel="back">放弃</a>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.mobile.js"></script>
+</body>
+</html>
