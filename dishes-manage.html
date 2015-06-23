@@ -23,14 +23,23 @@
         <div class="ui-grid-solo single-line-form">
             <a href="add-new-dish.html" class="ui-outline ui-btn ui-btn-d ui-btn-block" data-transition="slide">添加新菜品</a>
         </div>
-        <ul data-role="listview" class="list-click-edit">
-            <li>
-                <a href="select-list.html" data-transition="slide">
-                    <label>选择分类</label>
-                    <p>招牌菜</p>
-                </a>
-            </li>
-        </ul>
+        <div class="cutline"></div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <select data-native-menu="true" data-corners="false" data-mini="true">
+                    <option>选择分类</option>
+                    <option>招牌菜</option>
+                    <option>固定消费</option>
+                </select>
+            </div>
+            <div class="ui-block-b">
+                <select data-native-menu="true" data-corners="false" data-mini="true">
+                    <option>选择状态</option>
+                    <option>在售</option>
+                    <option>已下架</option>
+                </select>
+            </div>
+        </div>
         <ul data-role="listview" class="ui-listview list-with-button dishes-list">
             <li>
                 <img class="dish-img" src="img/placeholder.png">
@@ -41,7 +50,7 @@
                 </div>
                 <div class="ctrl-wrap">
                     <a href="edit-dish.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline"></a>
+                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline pause-sale-btn" data-textonly="true" data-textvisible="true" data-msgtext="商品已下架" data-inline="true"></a>
                     <a href="delete-dish.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
                 </div>
                 <span class="clear"></span>
@@ -55,7 +64,7 @@
                 </div>
                 <div class="ctrl-wrap">
                     <a href="edit-dish.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline"></a>
+                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline pause-sale-btn" data-textonly="true" data-textvisible="true" data-msgtext="商品已下架" data-inline="true"></a>
                     <a href="delete-dish.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
                 </div>
                 <span class="clear"></span>
@@ -69,7 +78,7 @@
                 </div>
                 <div class="ctrl-wrap">
                     <a href="edit-dish.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline"></a>
+                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline pause-sale-btn" data-textonly="true" data-textvisible="true" data-msgtext="商品已下架" data-inline="true"></a>
                     <a href="delete-dish.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
                 </div>
                 <span class="clear"></span>
@@ -83,7 +92,7 @@
                 </div>
                 <div class="ctrl-wrap">
                     <a href="edit-dish.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline"></a>
+                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline pause-sale-btn" data-textonly="true" data-textvisible="true" data-msgtext="商品已下架" data-inline="true"></a>
                     <a href="delete-dish.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
                 </div>
                 <span class="clear"></span>
@@ -97,11 +106,33 @@
                 </div>
                 <div class="ctrl-wrap">
                     <a href="edit-dish.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline"></a>
+                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline pause-sale-btn" data-textonly="true" data-textvisible="true" data-msgtext="商品已下架" data-inline="true"></a>
                     <a href="delete-dish.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
                 </div>
                 <span class="clear"></span>
             </li>
         </ul>
     </div>
+    <script type="text/javascript">
+    $(function(){
+        $(document).on("click", ".pause-sale-btn", function() {
+            var $this = $( this ),
+            theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+            msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+            textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+            textonly = !!$this.jqmData( "textonly" );
+            html = $this.jqmData( "html" ) || "";
+            $.mobile.loading( "show", {
+                text: msgText,
+                textVisible: textVisible,
+                theme: theme,
+                textonly: textonly,
+                html: html
+            });
+            setTimeout(function(){
+                $.mobile.loading( "hide" );
+            }, 1000)
+        })
+    });
+    </script>
 </div>
