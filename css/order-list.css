@@ -1,0 +1,46 @@
+.order-list-wrap {
+    padding-top: 20px;
+}
+
+.order-list {
+
+}
+
+.order-list li a {
+    text-decoration: none;
+}
+
+.order-list li a h2 {
+    float: left;
+    width: 25%;
+    height: 1.6rem;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.6rem;
+    color: #666!important;
+    margin: 0;
+}
+
+.order-list li a h2 span {
+    font-size: 0.6rem;
+    color: #666!important;
+}
+
+.order-list li a p {
+    float: left;
+    width: 70%;
+    overflow: hidden;
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+    color: #333!important;
+}
+
+span.order-time {
+    font-size: 0.8rem;
+    color: #999!important;
+}
+
+span.order-status {
+    padding-left: 1rem;
+    font-size: 0.8rem;
+}

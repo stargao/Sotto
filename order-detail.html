@@ -1,77 +1,56 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <link rel="stylesheet" href="css/jquery.mobile.ios.theme.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <title>乐摇肴后台管理系统</title>
-</head>
-<body>
-    <div data-role="page" class="order-detail-page">
-        <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
-            <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
-            <h1 class="header-title">订单详情</h1>
-            <a href="#" class="ui-btn-right top-right-btn">加 菜</a>
-        </div>
-        <div data-role="content">
-            <ul data-role="listview" class="order-detail-list">
-                <li class="order-info-line">
-                    <div class="ui-grid-solo">
-                        <h4 class="desk-num">15<span>桌</span></h4>
-                        <span class="order-time">2015-6-11 17:31</span>
-                        <span class="order-status order-new">新订单</span>
+<div data-role="page" class="order-detail-page">
+    <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
+        <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
+        <h1 class="header-title">订单详情</h1>
+        <a href="#" class="ui-btn-right top-right-btn">加 菜</a>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" class="order-detail-list">
+            <li class="order-info-line">
+                <div class="ui-grid-solo">
+                    <h4 class="desk-num">15<span>桌</span></h4>
+                    <span class="order-time">2015-6-11 17:31</span>
+                    <span class="order-status order-new">新订单</span>
+                </div>
+            </li>
+            <li class="order-content-line">
+                <div class="ui-grid-solo">
+                    <p class="dishes-name">红烧肉</p>
+                    <p class="dishes-num">1</p>
+                    <div class="ctrl-wrap two-buttons">
+                        <a href="#check" class="ui-btn ui-icon-ion-checkmark ui-btn-icon-notext ui-shadow ui-corner-all check-btn"></a>
+                        <a href="#edit" class="ui-btn ui-icon-ion-compose ui-btn-icon-notext ui-shadow ui-corner-all edit-btn"></a>    
                     </div>
-                </li>
-                <li class="order-content-line">
-                    <div class="ui-grid-solo">
-                        <p class="dishes-name">红烧肉</p>
+                </div>
+            </li>
+            <li class="order-content-line">
+                <div class="ui-grid-solo">
+                    <p class="dishes-name">干煸肥肠</p>
+                    <div class="ctrl-wrap change-number">
+                        <a href="#save" class="ui-btn ui-icon-ion-checkmark ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-d save-btn"></a>
+                        <a href="#plus" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all check-btn"></a>
                         <p class="dishes-num">1</p>
-                        <div class="ctrl-wrap two-buttons">
-                            <a href="#check" class="ui-btn ui-icon-ion-checkmark ui-btn-icon-notext ui-shadow ui-corner-all check-btn"></a>
-                            <a href="#edit" class="ui-btn ui-icon-ion-compose ui-btn-icon-notext ui-shadow ui-corner-all edit-btn"></a>    
-                        </div>
+                        <a href="#minus" class="ui-btn ui-icon-ion-minus ui-btn-icon-notext ui-shadow ui-corner-all edit-btn"></a>    
                     </div>
-                </li>
-                <li class="order-content-line">
-                    <div class="ui-grid-solo">
-                        <p class="dishes-name">干煸肥肠</p>
-                        <div class="ctrl-wrap change-number">
-                            <a href="#save" class="ui-btn ui-icon-ion-checkmark ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-d save-btn"></a>
-                            <a href="#plus" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all check-btn"></a>
-                            <p class="dishes-num">1</p>
-                            <a href="#minus" class="ui-btn ui-icon-ion-minus ui-btn-icon-notext ui-shadow ui-corner-all edit-btn"></a>    
-                        </div>
+                </div>
+            </li>
+            <li class="order-content-line">
+                <div class="ui-grid-solo">
+                    <p class="dishes-name">青椒土豆</p>
+                    <div class="ctrl-wrap del-item">
+                        <a href="#del" class="ui-btn ui-icon-ion-trash-a ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-f del-btn"></a>
+                        <p class="del-msg">删除?</p>
+                        <a href="#cancel" class="ui-btn ui-icon-ion-close ui-btn-icon-notext ui-shadow ui-corner-all cancel-btn"></a>    
                     </div>
-                </li>
-                <li class="order-content-line">
-                    <div class="ui-grid-solo">
-                        <p class="dishes-name">青椒土豆</p>
-                        <div class="ctrl-wrap del-item">
-                            <a href="#del" class="ui-btn ui-icon-ion-trash-a ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-f del-btn"></a>
-                            <p class="del-msg">删除?</p>
-                            <a href="#cancel" class="ui-btn ui-icon-ion-close ui-btn-icon-notext ui-shadow ui-corner-all cancel-btn"></a>    
-                        </div>
-                    </div>
-                </li>
-                <li class="order-content-line finished-line">
-                    <div class="ui-grid-solo">
-                        <p class="dishes-name">紫菜蛋花汤</p>
-                        <p class="dishes-num">1</p>
-                        <span class="finished-status">已送</span>
-                        <!--div class="ctrl-wrap two-buttons">
-                            <a href="#check" class="ui-btn ui-link ui-icon-ion-checkmark ui-btn-icon-notext ui-shadow ui-corner-all check-btn"></a>
-                            <a href="#edit" class="ui-btn ui-link ui-icon-ion-compose ui-btn-icon-notext ui-shadow ui-corner-all edit-btn"></a>    
-                        </div-->
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>å
-    <script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="js/vendor/jquery.mobile.js"></script>
-</body>
-</html>
+                </div>
+            </li>
+            <li class="order-content-line finished-line">
+                <div class="ui-grid-solo">
+                    <p class="dishes-name">紫菜蛋花汤</p>
+                    <p class="dishes-num">1</p>
+                    <span class="finished-status">已送</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

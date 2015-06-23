@@ -1,53 +1,49 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <link rel="stylesheet" href="css/jquery.mobile.ios.theme.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <style>
-    </style>
-    <title>乐摇肴后台管理系统</title>
-</head>
-<body>
-    <div data-role="page" class="set-desk-page">
-        <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
-            <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
-            <h1 class="header-title">店铺信息</h1>
-            <!--a href="#" class="ui-btn-right top-right-btn">保 存</a-->
-        </div>
-        <div data-role="content">
-            <ul data-role="listview" class="list-click-edit">
-                <li>
-                    <a href="edit-content.html" data-transition="slide">
-                        <label>店铺名字</label>
-                        <p>巴蜀崽火锅东光店</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="edit-content.html" data-transition="slide">
-                        <label>店铺地址</label>
-                        <p>锦江区锦华路一段185-191号</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="edit-content.html" data-transition="slide">
-                        <label>分享内容</label>
-                        <p>本店消费欢迎您的到来</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="edit-content.html" data-transition="slide">
-                        <label>修改登录密码</label>
-                    </a>
-                </li>
-            </ul>
-        </div>
+<div data-role="page" class="shop-info-page">
+    <div data-role="panel" data-display="push" data-position="right" id="panel-menu">
+        <ul data-role="listview">
+            <li data-role="list-divider">订单管理</li>
+            <li><a href="order-list.html" data-transition="slideup">当前订单管理</a></li>
+            <li data-role="list-divider">基本信息</li>
+            <li><a href="shop-info.html" page-transtion="slideup">店铺基本信息</a></li>
+            <li><a href="desk-manage.html" page-transtion="slideup">桌号管理</a></li>
+            <li><a href="" page-transtion="slideup">服务员账号管理</a></li>
+            <li data-role="list-divider">菜品管理</li>
+            <li><a href="add-category.html" page-transtion="slideup">分类管理</a></li>
+            <li><a href="dishes-manage.html" page-transtion="slideup">菜品管理</a></li>
+            <li data-role="list-divider">其他</li>
+            <li><a href="index.html" data-transition="flip">退出登录</a></li>
+        </ul>
     </div>
-    <script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="js/vendor/jquery.mobile.js"></script>
-</body>
-</html>
+    <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
+        <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
+        <h1 class="header-title">店铺信息</h1>
+        <a href="#panel-menu" data-icon="ion-navicon-round" data-iconpos="notext" class="ui-btn-right"></a>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" class="list-click-edit">
+            <li>
+                <a href="edit-content.html" data-transition="slide">
+                    <label>店铺名字</label>
+                    <p>巴蜀崽火锅东光店</p>
+                </a>
+            </li>
+            <li>
+                <a href="edit-content.html" data-transition="slide">
+                    <label>店铺地址</label>
+                    <p>锦江区锦华路一段185-191号</p>
+                </a>
+            </li>
+            <li>
+                <a href="edit-content.html" data-transition="slide">
+                    <label>分享内容</label>
+                    <p>本店消费欢迎您的到来</p>
+                </a>
+            </li>
+            <li>
+                <a href="edit-content.html" data-transition="slide">
+                    <label>修改登录密码</label>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

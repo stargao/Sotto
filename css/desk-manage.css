@@ -1,0 +1,33 @@
+.category-list {
+}
+
+.category-list li:first-child {
+    border-top: 1px solid #eee;
+}
+
+.category-list li {
+    display: block;
+    padding: 0 1em;
+    border-bottom: 1px solid #eee;
+}
+
+.category-list li p {
+    float: left;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.category-list li a {
+    width: 40px;
+    height: 40px;
+    border: none !important;
+    float: right;
+    margin-left: 2px !important;
+}
+
+.category-list .ui-btn-icon-notext::after, 
+.category-list .ui-btn-icon-top::after, 
+.category-list .ui-btn-icon-bottom::after {
+    left: 50%;
+    margin-left: -4px;
+}
