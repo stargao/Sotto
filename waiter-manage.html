@@ -1,0 +1,55 @@
+<div data-role="page" class="waiter-manage-page">
+    <div data-role="panel" data-display="push" data-position="right" id="panel-menu">
+        <ul data-role="listview">
+            <li data-role="list-divider">订单管理</li>
+            <li><a href="order-list.html" data-transition="slideup">当前订单管理</a></li>
+            <li data-role="list-divider">基本信息</li>
+            <li><a href="shop-info.html" page-transtion="slideup">店铺基本信息</a></li>
+            <li><a href="desk-manage.html" page-transtion="slideup">桌号管理</a></li>
+            <li><a href="waiter-manage.html" page-transtion="slideup">服务员账号管理</a></li>
+            <li data-role="list-divider">菜品管理</li>
+            <li><a href="add-category.html" page-transtion="slideup">分类管理</a></li>
+            <li><a href="dishes-manage.html" page-transtion="slideup">菜品管理</a></li>
+            <li data-role="list-divider">其他</li>
+            <li><a href="index.html" data-transition="flip">退出登录</a></li>
+        </ul>
+    </div>
+    <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
+        <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
+        <h1 class="header-title">服务员账号</h1>
+        <a href="#panel-menu" data-icon="ion-navicon-round" data-iconpos="notext" class="ui-btn-right"></a>
+    </div>
+    <div data-role="content">
+        <div class="ui-grid-solo single-line-form">
+            <a href="add-new-waiter.html" class="ui-outline ui-btn ui-btn-d ui-btn-block" data-transition="slide">新增服务员账号</a>
+        </div>
+        <div class="cutline"></div>
+        <ul data-role="listview" class="ui-listview list-with-button waiter-list">
+            <li>
+                <div class="waiter-content">
+                    <div class="content-line">
+                         <span class="content-title">用户名: </span>
+                         <p>waiter-name-1</p>
+                         <span class="clear"></span>
+                    </div>
+                    <div class="content-line">
+                         <span class="content-title">密码: </span>
+                         <p>waiter001</p>
+                         <span class="clear"></span>
+                    </div>
+                    <div class="content-line">
+                         <span class="content-title">负责桌号: </span>
+                         <p>12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22</p>
+                         <span class="clear"></span>
+                    </div>
+                </div>
+                
+                <div class="ctrl-wrap">
+                    <a href="edit-waiter.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    <a href="delete-waiter.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
+                </div>
+                <span class="clear"></span>
+            </li>
+        </ul>
+    </div>
+</div>

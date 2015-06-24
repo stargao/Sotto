@@ -1,8 +1,11 @@
-@import 'login.css';
+@import 'change-desk-num.css';
+@import 'dishes-list.css';
 @import 'desk-manage.css';
+@import 'login.css';
 @import 'order-list.css';
 @import 'order-detail.css';
-@import 'change-desk-num.css';
+@import 'waiter-list.css';
+
 
 body {
     height: 100%;
@@ -175,48 +178,33 @@ body {
     padding: 0px 12px;
 }
 
-/*Dished list*/
-.dishes-list {
+.change-content-frame form .ui-input-text input {
+    border: none;
+}
+
+.change-password-frame {
 
 }
 
-.dishes-list li {
+.change-password-frame li {
     
 }
 
-.dishes-list li img.dish-img {
-    float: left;
-    width: 80px;
-    height: 80px;
-    margin-top: 15px;
+.change-password-frame li label {
+    display: block;
 }
 
-.dishes-list li div.dish-content-wrap {
-    display: block;
+.bottom-line {
+    position: fixed;
+    width: 100%;
     overflow: hidden;
+    bottom: 0px;
 }
 
-.dishes-list li div.dish-content-wrap h4.dish-name {
-    font-size: 14px;
+.bottom-line a {
+    padding: 0.6em 0;
 }
 
-.dishes-list li div.dish-content-wrap span.dish-desc {
-    display: block;
-    font-size: 12px;
-    color: #666;
-}
-
-.dishes-list li div.dish-content-wrap p.dish-price {
-    display: block;
-    font-size: 16px;
-    color: #ff0033;
-}
-
-.dishes-list li div.ctrl-wrap {
-    display: block;
-    height: 40px;
-}
-
-.dishes-list li div.ctrl-wrap .ui-btn-icon-notext::after, .dishes-list li div.ctrl-wrap .ui-btn-icon-top::after, .dishes-list li div.ctrl-wrap .ui-btn-icon-bottom::after {
-    margin-left: -11px;
+.bottom-line a span {
+    font-weight: bold;
 }

@@ -6,7 +6,7 @@
             <li data-role="list-divider">基本信息</li>
             <li><a href="shop-info.html" page-transtion="slideup">店铺基本信息</a></li>
             <li><a href="desk-manage.html" page-transtion="slideup">桌号管理</a></li>
-            <li><a href="" page-transtion="slideup">服务员账号管理</a></li>
+            <li><a href="waiter-manage.html" page-transtion="slideup">服务员账号管理</a></li>
             <li data-role="list-divider">菜品管理</li>
             <li><a href="add-category.html" page-transtion="slideup">分类管理</a></li>
             <li><a href="dishes-manage.html" page-transtion="slideup">菜品管理</a></li>
@@ -16,7 +16,7 @@
     </div>
     <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
         <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
-        <h1 class="header-title">桌号管理</h1>
+        <h1 class="header-title">菜品管理</h1>
         <a href="#panel-menu" data-icon="ion-navicon-round" data-iconpos="notext" class="ui-btn-right"></a>
     </div>
     <div data-role="content">
@@ -114,25 +114,25 @@
         </ul>
     </div>
     <script type="text/javascript">
-    $(function(){
-        $(document).on("click", ".pause-sale-btn", function() {
-            var $this = $( this ),
-            theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
-            msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
-            textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
-            textonly = !!$this.jqmData( "textonly" );
-            html = $this.jqmData( "html" ) || "";
-            $.mobile.loading( "show", {
-                text: msgText,
-                textVisible: textVisible,
-                theme: theme,
-                textonly: textonly,
-                html: html
-            });
-            setTimeout(function(){
-                $.mobile.loading( "hide" );
-            }, 1000)
-        })
-    });
+        $(function(){
+            $(document).on("click", ".pause-sale-btn", function() {
+                var $this = $( this ),
+                theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+                msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+                textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+                textonly = !!$this.jqmData( "textonly" );
+                html = $this.jqmData( "html" ) || "";
+                $.mobile.loading( "show", {
+                    text: msgText,
+                    textVisible: textVisible,
+                    theme: theme,
+                    textonly: textonly,
+                    html: html
+                });
+                setTimeout(function(){
+                    $.mobile.loading( "hide" );
+                }, 1000)
+            })
+        });
     </script>
 </div>
