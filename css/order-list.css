@@ -1,3 +1,18 @@
+.order-status-btn ul li a {
+    background-color: #fefdfe;
+    color: #666 !important;
+    border-bottom: 2px solid transparent !important;
+}
+
+.order-status-btn ul li a.ui-btn-active {
+    background-color: #fefdfe !important;
+    color: #4a87ee !important;
+    border-top: 1px solid transparent !important;
+    border-left: 1px solid transparent !important;
+    border-right: 1px solid transparent !important;
+    border-bottom: 2px solid #4a87ee !important;
+}
+
 .order-list-wrap {
     padding-top: 20px;
 }
@@ -43,4 +58,8 @@ span.order-time {
 span.order-status {
     padding-left: 1rem;
     font-size: 0.8rem;
+}
+
+span.order-status.order-pay {
+    color: #ff0033;
 }
