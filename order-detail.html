@@ -22,7 +22,7 @@
                         <a href="#edit" class="ui-btn ui-icon-ion-compose ui-btn-icon-notext ui-shadow ui-corner-all edit-btn"></a>    
                     </div>
                     <div class="ctrl-wrap change-number">
-                        <a href="#save" class="ui-btn ui-icon-ion-checkmark ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-d save-btn"></a>
+                        <a href="#save" class="ui-btn ui-icon-ion-ios-checkmark-outline ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-d save-btn"></a>
                         <a href="#plus" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn"></a>
                         <p class="change-dishes-num">1</p>
                         <a href="#minus" class="ui-btn ui-icon-ion-minus ui-btn-icon-notext ui-shadow ui-corner-all minus-btn"></a>    
@@ -44,7 +44,7 @@
                         <a href="#edit" class="ui-btn ui-icon-ion-compose ui-btn-icon-notext ui-shadow ui-corner-all edit-btn"></a>    
                     </div>
                     <div class="ctrl-wrap change-number">
-                        <a href="#save" class="ui-btn ui-icon-ion-checkmark ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-d save-btn"></a>
+                        <a href="#save" class="ui-btn ui-icon-ion-ios-checkmark-outline ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-d save-btn"></a>
                         <a href="#plus" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn"></a>
                         <p class="change-dishes-num">1</p>
                         <a href="#minus" class="ui-btn ui-icon-ion-minus ui-btn-icon-notext ui-shadow ui-corner-all minus-btn"></a>    
@@ -66,7 +66,7 @@
                         <a href="#edit" class="ui-btn ui-icon-ion-compose ui-btn-icon-notext ui-shadow ui-corner-all edit-btn"></a>    
                     </div>
                     <div class="ctrl-wrap change-number">
-                        <a href="#save" class="ui-btn ui-icon-ion-checkmark ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-d save-btn"></a>
+                        <a href="#save" class="ui-btn ui-icon-ion-ios-checkmark-outline ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-d save-btn"></a>
                         <a href="#plus" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn"></a>
                         <p class="change-dishes-num">1</p>
                         <a href="#minus" class="ui-btn ui-icon-ion-minus ui-btn-icon-notext ui-shadow ui-corner-all minus-btn"></a>    
@@ -79,7 +79,7 @@
                     <span class="finished-status">已送</span>
                 </div>
             </li>
-            <li class="order-content-line finished-line">
+            <li class="order-content-line">
                 <div class="ui-grid-solo">
                     <p class="dishes-name">紫菜蛋花汤</p>
                     <p class="dishes-num">1</p>
@@ -88,7 +88,7 @@
                         <a href="#edit" class="ui-btn ui-icon-ion-compose ui-btn-icon-notext ui-shadow ui-corner-all edit-btn"></a>    
                     </div>
                     <div class="ctrl-wrap change-number">
-                        <a href="#save" class="ui-btn ui-icon-ion-checkmark ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-d save-btn"></a>
+                        <a href="#save" class="ui-btn ui-icon-ion-ios-checkmark-outline ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-d save-btn"></a>
                         <a href="#plus" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn"></a>
                         <p class="change-dishes-num">1</p>
                         <a href="#minus" class="ui-btn ui-icon-ion-minus ui-btn-icon-notext ui-shadow ui-corner-all minus-btn"></a>    
@@ -122,11 +122,28 @@
         </ul>
     </div>
 
-    <div class="ui-grid-solo bottom-line">
+    <fieldset class="ui-grid-a bottom-line confirm-order-line">
+        <div class="ui-block-a">
+            <a href="#cancel" class="ui-btn ui-btn-f ui-btn-block ui-clear">取消订单</a>
+        </div>
+        <div class="ui-block-b">
+            <a href="#confirm" class="ui-btn ui-btn-d ui-btn-block ui-outline confirm-order-btn">接受订单</a>
+        </div>
+    </fieldset>
+
+    <div class="ui-grid-solo bottom-line wait-pay-line">
         <a href="#pay" class="ui-btn ui-btn-f ui-btn-block ui-icon-ion-card ui-btn-icon-left">待付款: <span>382.0 元</span></a>
     </div>
     <script>
         $(function(){
+            $('.order-detail-page .confirm-order-line .confirm-order-btn').click(function(){
+                $('.confirm-order-line').hide();
+                $('.wait-pay-line').show();
+                $('.order-detail-page .special-item-list').show();
+                $('.order-detail-list li.order-content-line .two-buttons').show();
+                $('.order-detail-page .top-right-btn').show();
+            });
+
             $('.order-detail-list li.order-content-line .two-buttons a').click(function(){
                 var clickBtn = $(this).attr('href');
 

@@ -4,8 +4,8 @@
     padding: 5px 0;
 }
 
-#change-number-frame .ui-input-text {
+#change-number-frame .ui-input-text, #change-number-frame .ui-select {
     border: 1px solid #ccc;
     height: 34px;
-    padding: 0px 12px;
+    padding: 2px 12px;
 }
