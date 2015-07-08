@@ -1,4 +1,4 @@
-.category-list {
+/*.category-list {
 }
 
 .category-list li:first-child {
@@ -30,4 +30,62 @@
 .category-list .ui-btn-icon-bottom::after {
     left: 50%;
     margin-left: -4px;
+}*/
+
+.ui-table-columntoggle-btn {
+    display: none;
+}
+
+.set-desk-number {
+    padding: 10px 1em;
+    border-bottom: 1px solid #eee;
+}
+
+.set-desk-number label {
+    font-size: 12px;
+    color: #666;
+    padding: 5px 0;
+}
+
+.set-desk-number .ui-input-text, .set-desk-number .ui-select {
+    border: 1px solid #ccc;
+    height: 34px;
+    padding: 2px 12px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.desk-list-table {
+    width: 100%;
+}
+
+.desk-list-table th {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+}
+
+.desk-list-table td.desk-num {
+    width: 30%;
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.desk-list-table td.desk-set {
+    width: 40%;
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.desk-list-table td.desk-ctrl {
+    width: 30%;
+    vertical-align: middle;
+    text-align: right;
+    padding: 0;
+}
+
+.desk-list-table td.desk-ctrl .ui-btn-icon-notext::after {
+    margin-top: -12px;
 }

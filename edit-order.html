@@ -1,0 +1,188 @@
+<div data-role="page" class="order-detail-page">
+    <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
+        <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
+        <h1 class="header-title">订单详情</h1>
+        <a href="new-dish-order.html" class="ui-btn-right top-right-btn hidden" data-transition="slide">加 菜</a>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" class="order-detail-list">
+            <li class="order-info-line">
+                <div class="ui-grid-solo">
+                    <h4 class="desk-num">15<span>桌</span></h4>
+                    <span class="order-time">2015-6-11 17:31</span>
+                    <span class="order-status order-new">新订单</span>
+                </div>
+            </li>
+            <li class="order-content-line">
+                <div class="ui-grid-solo">
+                    <p class="dishes-name">红烧肉</p>
+                    <div class="ctrl-wrap change-number-item">
+                        <a href="#plus-only" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn" disabled="disabled"></a>
+                        <p>1</p>
+                        <a href="#minus-only" class="ui-btn ui-icon-ion-minus ui-btn-icon-notext ui-shadow ui-corner-all minus-btn"></a>    
+                    </div>
+                    <div class="ctrl-wrap del-item hidden">
+                        <a href="#del" class="ui-btn ui-icon-ion-trash-a ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-f del-btn"></a>
+                        <p>删除?</p>
+                        <a href="#cancel" class="ui-btn ui-icon-ion-ios-undo-outline ui-btn-icon-notext ui-shadow ui-corner-all cancel-btn"></a>    
+                    </div>
+                    <div class="ctrl-wrap finished-item hidden">
+                        <p class="dishes-num">1</p> 
+                        <p class="dishes-status">已送</p>
+                    </div>
+                </div>
+            </li>
+            <li class="order-content-line">
+                <div class="ui-grid-solo">
+                    <p class="dishes-name">干煸肥肠</p>
+                    <div class="ctrl-wrap change-number-item">
+                        <a href="#plus-only" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn" disabled="disabled"></a>
+                        <p>1</p>
+                        <a href="#minus-only" class="ui-btn ui-icon-ion-minus ui-btn-icon-notext ui-shadow ui-corner-all minus-btn"></a>    
+                    </div>
+                    <div class="ctrl-wrap del-item hidden">
+                        <a href="#del" class="ui-btn ui-icon-ion-trash-a ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-f del-btn"></a>
+                        <p>删除?</p>
+                        <a href="#cancel" class="ui-btn ui-icon-ion-ios-undo-outline ui-btn-icon-notext ui-shadow ui-corner-all cancel-btn"></a>    
+                    </div>
+                    <div class="ctrl-wrap finished-item hidden">
+                        <p class="dishes-num">1</p> 
+                        <p class="dishes-status">已送</p>
+                    </div>
+                </div>
+            </li>
+            <li class="order-content-line">
+                <div class="ui-grid-solo">
+                    <p class="dishes-name">青椒土豆</p>
+                    <div class="ctrl-wrap change-number-item">
+                        <a href="#plus-only" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn" disabled="disabled"></a>
+                        <p>1</p>
+                        <a href="#minus-only" class="ui-btn ui-icon-ion-minus ui-btn-icon-notext ui-shadow ui-corner-all minus-btn"></a>    
+                    </div>
+                    <div class="ctrl-wrap del-item hidden">
+                        <a href="#del" class="ui-btn ui-icon-ion-trash-a ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-f del-btn"></a>
+                        <p>删除?</p>
+                        <a href="#cancel" class="ui-btn ui-icon-ion-ios-undo-outline ui-btn-icon-notext ui-shadow ui-corner-all cancel-btn"></a>    
+                    </div>
+                    <div class="ctrl-wrap finished-item hidden">
+                        <p class="dishes-num">1</p> 
+                        <p class="dishes-status">已送</p>
+                    </div>
+                </div>
+            </li>
+            <li class="order-content-line">
+                <div class="ui-grid-solo">
+                    <p class="dishes-name">紫菜蛋花汤</p>
+                    <div class="ctrl-wrap change-number-item">
+                        <a href="#plus-only" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn" disabled="disabled"></a>
+                        <p>1</p>
+                        <a href="#minus-only" class="ui-btn ui-icon-ion-minus ui-btn-icon-notext ui-shadow ui-corner-all minus-btn"></a>    
+                    </div>
+                    <div class="ctrl-wrap del-item hidden">
+                        <a href="#del" class="ui-btn ui-icon-ion-trash-a ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-f del-btn"></a>
+                        <p>删除?</p>
+                        <a href="#cancel" class="ui-btn ui-icon-ion-ios-undo-outline ui-btn-icon-notext ui-shadow ui-corner-all cancel-btn"></a>    
+                    </div>
+                    <div class="ctrl-wrap finished-item hidden">
+                        <p class="dishes-num">1</p> 
+                        <p class="dishes-status">已送</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <ul data-role="listview" class="order-detail-list">
+            <li class="order-info-line">
+                <div class="ui-grid-solo">
+                    <span class="order-title">固定消费项目</span>
+                </div>
+            </li>
+            <li class="order-content-line">
+                <div class="ui-grid-solo">
+                    <p class="dishes-name">碗筷</p>
+                    <div class="ctrl-wrap change-number-item">
+                        <a href="#plus-only" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn" disabled="disabled"></a>
+                        <p>1</p>
+                        <a href="#minus-only" class="ui-btn ui-icon-ion-minus ui-btn-icon-notext ui-shadow ui-corner-all minus-btn"></a>    
+                    </div>
+                    <div class="ctrl-wrap del-item hidden">
+                        <a href="#del" class="ui-btn ui-icon-ion-trash-a ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-f del-btn"></a>
+                        <p>删除?</p>
+                        <a href="#cancel" class="ui-btn ui-icon-ion-ios-undo-outline ui-btn-icon-notext ui-shadow ui-corner-all cancel-btn"></a>    
+                    </div>
+                    <div class="ctrl-wrap finished-item hidden">
+                        <p class="dishes-num">1</p> 
+                        <p class="dishes-status">已送</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <fieldset class="ui-grid-a bottom-line confirm-order-line">
+        <div class="ui-block-a">
+            <a href="delete-order.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-btn ui-btn-f ui-btn-block ui-clear">取消订单</a>
+        </div>
+        <div class="ui-block-b">
+            <a href="#confirm" class="ui-btn ui-btn-d ui-btn-block ui-outline confirm-order-btn">确认订单</a>
+        </div>
+    </fieldset>
+
+    <div class="ui-grid-solo bottom-line wait-pay-line hidden">
+        <a href="#pay" class="ui-btn ui-btn-f ui-btn-block ui-icon-ion-card ui-btn-icon-left">待付款: <span>382.0 元</span></a>
+    </div>
+    <script>
+        $(function(){
+            //Change dishes number function
+            function changeNum() {
+                var clickBtn = $(this).attr('href');
+                var dishNum = parseInt($(this).closest('.change-number-item').find('p').text());
+                
+                if(clickBtn == '#plus-only') {
+                    dishNum = dishNum + 1;
+                    $(this).closest('.change-number-item').find('p').text(dishNum);
+                } else if(clickBtn == '#minus-only') {
+                    if(dishNum == 1) {
+                        $(this).closest('.order-content-line').find('.del-item').removeClass('hidden');
+                        $(this).closest('.change-number-item').addClass('hidden');
+                    } else {
+                        dishNum = dishNum - 1;
+                        $(this).closest('.change-number-item').find('p').text(dishNum);
+                    }
+                }
+
+                $(this).closest('.order-content-line').find('p.dishes-num').text(dishNum);
+            }
+
+            //Delete dish function
+            function delItem() {
+                var clickBtn = $(this).attr('href');
+
+                if(clickBtn == '#del') {
+                    $(this).closest('.order-content-line').remove();
+                } else if(clickBtn == '#cancel') {
+                    $(this).closest('.order-content-line').find('.change-number-item').removeClass('hidden');
+                    $(this).closest('.del-item').addClass('hidden');
+                }
+            }
+
+            //Finish dish function
+            function finishItem() {
+                $(this).closest('.order-content-line').toggleClass('finished-line');
+                $(this).closest('.order-content-line').find('.change-number-item').toggleClass('hidden');
+                $(this).closest('.order-content-line').find('.finished-item').toggleClass('hidden');
+            }
+                
+
+            $('.order-detail-list li.order-content-line .change-number-item a').click(changeNum);
+            $('.order-detail-list li.order-content-line .del-item a').click(delItem);
+            $('.order-detail-list li.order-content-line p.dishes-name').click(finishItem);
+
+            $('.confirm-order-btn').click(function(){
+                $('.confirm-order-line').addClass('hidden');
+                $('.wait-pay-line').removeClass('hidden');
+                $('.top-right-btn').removeClass('hidden');
+            });
+        });
+    </script>
+</div>

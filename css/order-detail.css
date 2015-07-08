@@ -1,8 +1,4 @@
 /*Order Detail Page Style*/
-.order-detail-page .top-right-btn {
-    display: none;
-}
-
 .order-detail-page .order-detail-list {
     padding-top: 20px;
 }
@@ -50,40 +46,51 @@
     color: #333;
 }
 
+.order-detail-page .order-content-line.finished-line {
+    background: #f2f2f2;
+}
+
+.order-detail-page .order-info-line span.order-title {
+    font-size: 0.8rem;
+    color: #666;
+}
+
 .order-detail-page .order-content-line p.dishes-name {
     float: left;
     display: inline-block;
-    width: 40%;
+    width: 50%;
     height: 100%;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 40px;
     overflow: hidden;
     margin: 0;
     padding: 0;
 }
 
-.order-detail-page .order-content-line p.dishes-num {
+.order-detail-page .order-content-line p.dishes-num-wrap {
     float: left;
     display: inline-block;
     width: 10%;
     height: 100%;
+    font-size: 1rem;
     text-align: center;
-    font-size: 14px;
     line-height: 40px;
+    overflow: hidden;
     margin: 0;
     padding: 0;
 }
 
-.order-detail-page .order-content-line p.dishes-price {
+.order-detail-page .order-content-line p.dishes-price-wrap {
     float: right;
     display: inline-block;
-    width: 50%;
+    width: 35%;
     height: 100%;
-    text-align: center;
-    font-size: 14px;
+    font-size: 1rem;
+    text-align: right;
     line-height: 40px;
+    overflow: hidden;
     margin: 0;
-    padding: 0;
+    padding-right: 15px;
 }
 
 .order-detail-page .order-content-line .ctrl-wrap {
@@ -92,11 +99,7 @@
     height: 40px;
 }
 
-.order-detail-page .order-content-line .two-buttons {
-    display: none;
-}
-
-.order-detail-page .order-content-line .two-buttons a {
+.order-detail-page .order-content-line .change-number-item a {
     float: right;
     display: inline-block;
     width: 40px;
@@ -105,21 +108,7 @@
     padding: 0;
 }
 
-.order-detail-page .order-content-line .change-number {
-    display: none;
-    width: 55%;
-}
-
-.order-detail-page .order-content-line .change-number a {
-    float: right;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    margin: -1px -1px 0 0;
-    padding: 0;
-}
-
-.order-detail-page .order-content-line .change-number p.change-dishes-num {
+.order-detail-page .order-content-line .ctrl-wrap p {
     float: right;
     display: inline-block;
     width: 41px;
@@ -128,14 +117,17 @@
     margin: 0;
     padding: 0;
     line-height: 40px;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: bold;
     color: #333;
 }
 
 .order-detail-page .order-content-line .del-item {
-    display: none;
-    width: 55%;
+    width: 50%;
+}
+
+.order-detail-page .order-content-line .del-item p {
+    font-size: 0.8rem;
 }
 
 .order-detail-page .order-content-line .del-item a {
@@ -147,66 +139,16 @@
     padding: 0;
 }
 
-.order-detail-page .order-content-line .del-item p.del-msg {
-    float: right;
-    display: inline-block;
-    width: 41px;
-    height: 40px;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    line-height: 40px;
-    font-size: 12px;
-    color: #f18835;
-}
-
-.order-detail-page .order-content-line span.finished-status {
-    float: right;
-    display: none;
-    width: 20%;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: bold;
-    color: #333;
-}
-
-.order-detail-page .finished-line {
-    background: #ececec;
-}
-
-.order-detail-page .finished-line .two-buttons {
-    display: none;
-}
-
-.order-detail-page .finished-line span.finished-status {
-    display: inline-block;
-    float: right;
-    width: 20%;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: bold;
-    color: #333;
-}
-
-.order-detail-page .finished-line p {
-    color: #666;
-    text-decoration: line-through;
-}
-
 .order-detail-page a.back-change-btn {
     font-size: 14px;
 }
 
 .order-detail-page p.order-total {
     text-align: right;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: bold;
     color: #ff0033;
-    padding: 5px 1em;
+    padding: 0 1em;
 }
 
 .order-detail-page p.order-total span {
@@ -215,20 +157,16 @@
     padding-right: 5px;
 }
 
-.order-detail-page .special-item-list {
-    display: none;
+.order-detail-page .order-content-line .finished-item {
+
 }
 
-.order-detail-page .special-item-list span.order-title {
-    font-size: 12px;
+.order-detail-page .order-content-line .finished-item p {
     color: #666;
+    text-decoration: line-through;
 }
 
-.order-detail-page .special-item-list .change-number {
-    display: block;
-}
-
-.order-detail-page .wait-pay-line {
-    display: none;
+.order-detail-page .order-content-line .finished-item p:first-child {
+    float: left;
 }
 
