@@ -1,0 +1,23 @@
+<div data-role="page" class="index-employee-type">
+    <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
+        <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
+        <h1 class="header-title">选择员工类型</h1>
+        <!--a href="#" class="ui-btn-right top-right-btn">保 存</a-->
+    </div>
+    <div data-role="content" class="select-list-wrap">
+        <ul data-role="listview" class="select-list">
+            <li>服务员</li>
+            <li>收银员</li>
+            <li>后厨</li>
+        </ul>
+    </div>
+    <script>
+        $(function(){
+            $('.select-list li').click(function(){
+                $('.select-list li').removeClass('selected');
+                $(this).toggleClass('selected');
+                $('.ui-btn-left').click();
+            });
+        })
+    </script>
+</div>

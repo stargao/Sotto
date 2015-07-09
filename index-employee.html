@@ -1,4 +1,4 @@
-<div data-role="page" class="index-waiter">
+<div data-role="page" class="index-employee">
     <div data-role="panel" data-display="push" data-position="right" id="panel-menu">
         <ul data-role="listview">
             <li data-role="list-divider">订单管理</li>
@@ -6,7 +6,7 @@
             <li data-role="list-divider">基本信息</li>
             <li><a href="show-shop.html" page-transtion="slideup">店铺基本信息</a></li>
             <li><a href="index-table.html" page-transtion="slideup">桌号管理</a></li>
-            <li><a href="index-waiter.html" page-transtion="slideup">服务员账号管理</a></li>
+            <li><a href="index-employee.html" page-transtion="slideup">员工账号管理</a></li>
             <li data-role="list-divider">菜品管理</li>
             <li><a href="new-category.html" page-transtion="slideup">分类管理</a></li>
             <li><a href="index-dish.html" page-transtion="slideup">菜品管理</a></li>
@@ -16,25 +16,25 @@
     </div>
     <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
         <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
-        <h1 class="header-title">服务员账号</h1>
+        <h1 class="header-title">员工账号</h1>
         <a href="#panel-menu" data-icon="ion-navicon-round" data-iconpos="notext" class="ui-btn-right"></a>
     </div>
     <div data-role="content">
         <div class="ui-grid-solo single-line-form">
-            <a href="new-waiter.html" class="ui-outline ui-btn ui-btn-d ui-btn-block" data-transition="slide">新增服务员账号</a>
+            <a href="new-employee.html" class="ui-outline ui-btn ui-btn-d ui-btn-block" data-transition="slide">新增员工账号</a>
         </div>
         <div class="cutline"></div>
-        <ul data-role="listview" class="ui-listview list-with-button waiter-list">
+        <ul data-role="listview" class="ui-listview list-with-button employee-list">
             <li>
-                <div class="waiter-content">
+                <div class="employee-content">
                     <div class="content-line">
                          <span class="content-title">用户名: </span>
-                         <p>waiter-name-1</p>
+                         <p>employee-name-1</p>
                          <span class="clear"></span>
                     </div>
                     <div class="content-line">
-                         <span class="content-title">密码: </span>
-                         <p>waiter001</p>
+                         <span class="content-title">员工类型: </span>
+                         <p>服务员</p>
                          <span class="clear"></span>
                     </div>
                     <div class="content-line">
@@ -45,8 +45,28 @@
                 </div>
                 
                 <div class="ctrl-wrap">
-                    <a href="edit-waiter.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="delete-waiter.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    <a href="edit-employee.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    <a href="delete-employee.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
+                </div>
+                <span class="clear"></span>
+            </li>
+            <li>
+                <div class="employee-content">
+                    <div class="content-line">
+                         <span class="content-title">用户名: </span>
+                         <p>employee-name-2</p>
+                         <span class="clear"></span>
+                    </div>
+                    <div class="content-line">
+                         <span class="content-title">员工类型: </span>
+                         <p>后厨</p>
+                         <span class="clear"></span>
+                    </div>
+                </div>
+                
+                <div class="ctrl-wrap">
+                    <a href="edit-employee.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    <a href="delete-employee.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
                 </div>
                 <span class="clear"></span>
             </li>
