@@ -1,10 +1,10 @@
-@import 'change-desk-num.css';
-@import 'dishes-list.css';
-@import 'desk-manage.css';
+@import 'edit-desk-num.css';
+@import 'index-dish.css';
+@import 'index-desk.css';
 @import 'login.css';
-@import 'order-list.css';
-@import 'order-detail.css';
-@import 'waiter-list.css';
+@import 'index-order.css';
+@import 'show-order.css';
+@import 'index-waiter.css';
 
 
 body {
@@ -113,6 +113,14 @@ body {
     height: 80px;
 }
 
+.list-click-edit .ui-btn-icon-right {
+    padding-right: 1em;
+}
+
+.list-click-edit .ui-btn-icon-right::after {
+    display: none;
+}
+
 .top-right-btn {
     width: 60px!important;
     height: 36px!important;
@@ -176,9 +184,9 @@ body {
     padding: 5px 0;
 }
 
-.change-content-frame form .ui-input-text {
+.change-content-frame form .ui-input-text, .change-content-frame form .ui-select {
     border: 1px solid #ccc;
-    height: 34px;
+    height: 36px;
     padding: 0px 12px;
 }
 
@@ -197,6 +205,7 @@ body {
 .change-password-frame li label {
     display: block;
 }
+/*Change content common style --- end*/
 
 .bottom-line {
     position: fixed;

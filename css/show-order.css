@@ -1,0 +1,198 @@
+/*Order Detail Page Style*/
+.edit-order .order-detail-list {
+    padding-top: 20px;
+}
+
+.edit-order .order-info-line {
+    height: 25px;
+    padding: 0 1rem;
+}
+
+.edit-order .order-info-line h4.desk-num {
+    float: left;
+    font-size: 16px;
+    line-height: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.edit-order .order-info-line h4.desk-num span {
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666;
+}
+
+.edit-order .order-info-line span {
+    float: left;
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px;
+    line-height: 25px;
+}
+
+.edit-order .order-info-line span.order-time {
+    color: #666;
+}
+
+.edit-order .order-info-line span.order-new {
+    color: #4a87ee;
+}
+
+.edit-order .order-content-line {
+    height: 40px;
+    padding: 0 0 0 1rem;
+    overflow: hidden;
+    color: #333;
+}
+
+.edit-order .order-content-line.finished-line {
+    background: #f2f2f2;
+}
+
+.edit-order .order-info-line span.order-title {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.edit-order .order-content-line p.dish-name {
+    float: left;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    font-size: 1rem;
+    line-height: 40px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.edit-order .order-content-line p.dish-num-wrap {
+    float: left;
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 40px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.edit-order .order-content-line .ctrl-wrap {
+    float: right;
+    width: 50%;
+    height: 40px;
+}
+
+.edit-order .order-content-line .change-number-item a {
+    float: right;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: -1px -1px 0 0;
+    padding: 0;
+}
+
+.edit-order .order-content-line .ctrl-wrap p {
+    float: right;
+    display: inline-block;
+    width: 41px;
+    height: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.edit-order .order-content-line .del-item {
+    width: 50%;
+}
+
+.edit-order .order-content-line .del-item p {
+    font-size: 0.8rem;
+}
+
+.edit-order .order-content-line .del-item a {
+    float: right;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: -1px -1px 0 0;
+    padding: 0;
+}
+
+.edit-order .order-content-line .finished-item {
+
+}
+
+.edit-order .order-content-line .finished-item p {
+    color: #666;
+    text-decoration: line-through;
+}
+
+.edit-order .order-content-line .finished-item p:first-child {
+    float: left;
+}
+
+
+/*Show order page style*/
+.show-order .order-content-line p.dish-name {
+    float: left;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    font-size: 1rem;
+    line-height: 40px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.show-order .order-content-line p.dish-num-wrap {
+    float: left;
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 40px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.show-order .order-content-line p.dish-price-wrap {
+    float: right;
+    display: inline-block;
+    width: 35%;
+    height: 100%;
+    font-size: 1rem;
+    text-align: right;
+    line-height: 40px;
+    overflow: hidden;
+    margin: 0;
+    padding-right: 15px;
+}
+
+.show-order a.back-change-btn {
+    font-size: 14px;
+}
+
+.show-order p.order-total {
+    text-align: right;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff0033;
+    padding: 0 1em;
+}
+
+.show-order p.order-total span {
+    font-weight: normal;
+    color: #666;
+    padding-right: 5px;
+}

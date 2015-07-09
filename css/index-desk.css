@@ -36,6 +36,7 @@
     display: none;
 }
 
+/*
 .set-desk-number {
     padding: 10px 1em;
     border-bottom: 1px solid #eee;
@@ -53,7 +54,7 @@
     padding: 2px 12px;
     margin-top: 0;
     margin-bottom: 0;
-}
+}*/
 
 .desk-list-table {
     width: 100%;

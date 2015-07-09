@@ -1,0 +1,45 @@
+/*Dished list*/
+.dish-list {
+
+}
+
+.dish-list li {
+    
+}
+
+.dish-list li img.dish-img {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-top: 15px;
+}
+
+.dish-list li div.dish-content-wrap {
+    display: block;
+    overflow: hidden;
+}
+
+.dish-list li div.dish-content-wrap h4.dish-name {
+    font-size: 14px;
+}
+
+.dish-list li div.dish-content-wrap span.dish-desc {
+    display: block;
+    font-size: 12px;
+    color: #666;
+}
+
+.dish-list li div.dish-content-wrap p.dish-price {
+    display: block;
+    font-size: 16px;
+    color: #ff0033;
+}
+
+.dish-list li div.ctrl-wrap {
+    display: block;
+    height: 40px;
+}
+
+.dish-list li div.ctrl-wrap .ui-btn-icon-notext::after, .dish-list li div.ctrl-wrap .ui-btn-icon-top::after, .dish-list li div.ctrl-wrap .ui-btn-icon-bottom::after {
+    margin-left: -11px;
+}

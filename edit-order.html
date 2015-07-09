@@ -1,4 +1,4 @@
-<div data-role="page" class="order-detail-page">
+<div data-role="page" class="edit-order">
     <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
         <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
         <h1 class="header-title">订单详情</h1>
@@ -15,7 +15,7 @@
             </li>
             <li class="order-content-line">
                 <div class="ui-grid-solo">
-                    <p class="dishes-name">红烧肉</p>
+                    <p class="dish-name">红烧肉</p>
                     <div class="ctrl-wrap change-number-item">
                         <a href="#plus-only" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn" disabled="disabled"></a>
                         <p>1</p>
@@ -34,7 +34,7 @@
             </li>
             <li class="order-content-line">
                 <div class="ui-grid-solo">
-                    <p class="dishes-name">干煸肥肠</p>
+                    <p class="dish-name">干煸肥肠</p>
                     <div class="ctrl-wrap change-number-item">
                         <a href="#plus-only" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn" disabled="disabled"></a>
                         <p>1</p>
@@ -53,7 +53,7 @@
             </li>
             <li class="order-content-line">
                 <div class="ui-grid-solo">
-                    <p class="dishes-name">青椒土豆</p>
+                    <p class="dish-name">青椒土豆</p>
                     <div class="ctrl-wrap change-number-item">
                         <a href="#plus-only" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn" disabled="disabled"></a>
                         <p>1</p>
@@ -72,7 +72,7 @@
             </li>
             <li class="order-content-line">
                 <div class="ui-grid-solo">
-                    <p class="dishes-name">紫菜蛋花汤</p>
+                    <p class="dish-name">紫菜蛋花汤</p>
                     <div class="ctrl-wrap change-number-item">
                         <a href="#plus-only" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn" disabled="disabled"></a>
                         <p>1</p>
@@ -99,7 +99,7 @@
             </li>
             <li class="order-content-line">
                 <div class="ui-grid-solo">
-                    <p class="dishes-name">碗筷</p>
+                    <p class="dish-name">碗筷</p>
                     <div class="ctrl-wrap change-number-item">
                         <a href="#plus-only" class="ui-btn ui-icon-ion-plus ui-btn-icon-notext ui-shadow ui-corner-all plus-btn" disabled="disabled"></a>
                         <p>1</p>
@@ -145,6 +145,7 @@
                     if(dishNum == 1) {
                         $(this).closest('.order-content-line').find('.del-item').removeClass('hidden');
                         $(this).closest('.change-number-item').addClass('hidden');
+                        $(this).closest('.order-content-line').find('p.dish-name').unbind('click');
                     } else {
                         dishNum = dishNum - 1;
                         $(this).closest('.change-number-item').find('p').text(dishNum);
@@ -163,6 +164,7 @@
                 } else if(clickBtn == '#cancel') {
                     $(this).closest('.order-content-line').find('.change-number-item').removeClass('hidden');
                     $(this).closest('.del-item').addClass('hidden');
+                    $(this).closest('.order-content-line').find('p.dish-name').bind('click');
                 }
             }
 
@@ -176,7 +178,7 @@
 
             $('.order-detail-list li.order-content-line .change-number-item a').click(changeNum);
             $('.order-detail-list li.order-content-line .del-item a').click(delItem);
-            $('.order-detail-list li.order-content-line p.dishes-name').click(finishItem);
+            $('.order-detail-list li.order-content-line p.dish-name').click(finishItem);
 
             $('.confirm-order-btn').click(function(){
                 $('.confirm-order-line').addClass('hidden');
