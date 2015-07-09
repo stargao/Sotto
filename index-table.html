@@ -1,0 +1,121 @@
+<div data-role="page" class="index-table">
+    <div data-role="panel" data-display="push" data-position="right" id="panel-menu">
+        <ul data-role="listview">
+            <li data-role="list-divider">订单管理</li>
+            <li><a href="index-order.html" data-transition="slideup">当前订单管理</a></li>
+            <li data-role="list-divider">基本信息</li>
+            <li><a href="show-shop.html" page-transtion="slideup">店铺基本信息</a></li>
+            <li><a href="index-table.html" page-transtion="slideup">桌号管理</a></li>
+            <li><a href="index-waiter.html" page-transtion="slideup">服务员账号管理</a></li>
+            <li data-role="list-divider">菜品管理</li>
+            <li><a href="new-category.html" page-transtion="slideup">分类管理</a></li>
+            <li><a href="index-dish.html" page-transtion="slideup">菜品管理</a></li>
+            <li data-role="list-divider">其他</li>
+            <li><a href="index.html" data-transition="flip">退出登录</a></li>
+        </ul>
+    </div>
+    <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
+        <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
+        <h1 class="header-title">桌号管理</h1>
+        <a href="#panel-menu" data-icon="ion-navicon-round" data-iconpos="notext" class="ui-btn-right"></a>
+    </div>
+    <div data-role="content">
+        <div class="ui-grid-solo single-line-form">
+            <a href="new-table.html" class="ui-outline ui-btn ui-btn-d ui-btn-block" data-transition="slide">添加桌号</a>
+        </div>
+        <table data-role="table" class="ui-responsive table-stripe table-list-table" data-mode="columntoggle">
+            <thead>
+                <tr>
+                    <th class="table-num">桌号</th>
+                    <th class="table-set">几人座</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="table-num">1</td>
+                    <td class="table-set">2人桌</td>
+                    <td class="table-ctrl align-right">
+                        <a href="edit-table-num.html" data-transition="flip" class="ui-btn ui-clear ui-btn-inline ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-num">2</td>
+                    <td class="table-set">2人桌</td>
+                    <td class="table-ctrl align-right">
+                        <a href="edit-table-num.html" data-transition="flip" class="ui-btn ui-clear ui-btn-inline ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-num">3</td>
+                    <td class="table-set">2人桌</td>
+                    <td class="table-ctrl align-right">
+                        <a href="edit-table-num.html" data-transition="flip" class="ui-btn ui-clear ui-btn-inline ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-num">4</td>
+                    <td class="table-set">2人桌</td>
+                    <td class="table-ctrl align-right">
+                        <a href="edit-table-num.html" data-transition="flip" class="ui-btn ui-clear ui-btn-inline ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-num">5</td>
+                    <td class="table-set">2人桌</td>
+                    <td class="table-ctrl align-right">
+                        <a href="edit-table-num.html" data-transition="flip" class="ui-btn ui-clear ui-btn-inline ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-num">6</td>
+                    <td class="table-set">2人桌</td>
+                    <td class="table-ctrl align-right">
+                        <a href="edit-table-num.html" data-transition="flip" class="ui-btn ui-clear ui-btn-inline ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-num">7</td>
+                    <td class="table-set">2人桌</td>
+                    <td class="table-ctrl align-right">
+                        <a href="edit-table-num.html" data-transition="flip" class="ui-btn ui-clear ui-btn-inline ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-num">8</td>
+                    <td class="table-set">2人桌</td>
+                    <td class="table-ctrl align-right">
+                        <a href="edit-table-num.html" data-transition="flip" class="ui-btn ui-clear ui-btn-inline ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--ul data-role="listview" class="ui-listview list-with-button">
+            <li>
+                <p>1</p>
+                <a href="edit-table-num.html" data-transition="flip" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                <span class="clear"></span>
+            </li>
+            <li>
+                <p>2</p>
+                <a href="edit-table-num.html" data-transition="flip" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                <span class="clear"></span>
+            </li>
+            <li>
+                <p>3</p>
+                <a href="edit-table-num.html" data-transition="flip" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                <span class="clear"></span>
+            </li>
+            <li>
+                <p>4</p>
+                <a href="edit-table-num.html" data-transition="flip" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                <span class="clear"></span>
+            </li>
+            <li>
+                <p>5</p>
+                <a href="edit-table-num.html" data-transition="flip" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
+                <span class="clear"></span>
+            </li>
+        </ul-->
+    </div>
+</div>

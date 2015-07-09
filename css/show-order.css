@@ -8,7 +8,7 @@
     padding: 0 1rem;
 }
 
-.edit-order .order-info-line h4.desk-num {
+.edit-order .order-info-line h4.table-num {
     float: left;
     font-size: 16px;
     line-height: 25px;
@@ -16,7 +16,7 @@
     padding: 0;
 }
 
-.edit-order .order-info-line h4.desk-num span {
+.edit-order .order-info-line h4.table-num span {
     float: right;
     font-size: 12px;
     font-weight: normal;
@@ -150,7 +150,7 @@
     padding: 0 1rem;
 }
 
-.show-order .order-info-line h4.desk-num {
+.show-order .order-info-line h4.table-num {
     float: left;
     font-size: 16px;
     line-height: 25px;
@@ -158,7 +158,7 @@
     padding: 0;
 }
 
-.show-order .order-info-line h4.desk-num span {
+.show-order .order-info-line h4.table-num span {
     float: right;
     font-size: 12px;
     font-weight: normal;

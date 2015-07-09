@@ -1,0 +1,38 @@
+.ui-table-columntoggle-btn {
+    display: none;
+}
+
+.table-list-table {
+    width: 100%;
+}
+
+.table-list-table th {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+}
+
+.table-list-table td.table-num {
+    width: 30%;
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-list-table td.table-set {
+    width: 40%;
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-list-table td.table-ctrl {
+    width: 30%;
+    vertical-align: middle;
+    text-align: right;
+    padding: 0;
+}
+
+.table-list-table td.table-ctrl .ui-btn-icon-notext::after {
+    margin-top: -12px;
+}
