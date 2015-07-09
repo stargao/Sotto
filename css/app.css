@@ -130,6 +130,11 @@ body {
     line-height: 36px!important;
 }
 
+.ui-btn-right.top-btn {
+    font-size: 1em;
+    line-height: 1em;
+}
+
 /*Select list style*/
 .select-list-wrap {
     margin-top: 20px;

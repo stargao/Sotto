@@ -1,138 +1,38 @@
 <div data-role="page" class="edit-dish">
-    <div data-role="panel" data-display="push" data-position="right" id="panel-menu">
-        <ul data-role="listview">
-            <li data-role="list-divider">订单管理</li>
-            <li><a href="index-order.html" data-transition="slideup">当前订单管理</a></li>
-            <li data-role="list-divider">基本信息</li>
-            <li><a href="show-shop.html" page-transtion="slideup">店铺基本信息</a></li>
-            <li><a href="index-desk.html" page-transtion="slideup">桌号管理</a></li>
-            <li><a href="index-waiter.html" page-transtion="slideup">服务员账号管理</a></li>
-            <li data-role="list-divider">菜品管理</li>
-            <li><a href="new-category.html" page-transtion="slideup">分类管理</a></li>
-            <li><a href="edit-dish.html" page-transtion="slideup">菜品管理</a></li>
-            <li data-role="list-divider">其他</li>
-            <li><a href="index.html" data-transition="flip">退出登录</a></li>
-        </ul>
-    </div>
     <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
         <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
-        <h1 class="header-title">菜品管理</h1>
-        <a href="#panel-menu" data-icon="ion-navicon-round" data-iconpos="notext" class="ui-btn-right"></a>
+        <h1 class="header-title">修改菜品</h1>
+        <a href="/" data-rel="back" class="ui-btn ui-btn-inline ui-btn-d ui-clear ui-mini ui-btn-right top-btn" data-transition="slidedown">保 存</a>
     </div>
     <div data-role="content">
-        <div class="ui-grid-solo single-line-form">
-            <a href="new-dish.html" class="ui-outline ui-btn ui-btn-d ui-btn-block" data-transition="slide">添加新菜品</a>
-        </div>
-        <div class="cutline"></div>
-        <div class="ui-grid-a">
-            <div class="ui-block-a">
-                <select data-native-menu="true" data-corners="false" data-mini="true">
-                    <option>选择分类</option>
-                    <option>招牌菜</option>
-                    <option>固定消费</option>
-                </select>
-            </div>
-            <div class="ui-block-b">
-                <select data-native-menu="true" data-corners="false" data-mini="true">
-                    <option>选择状态</option>
-                    <option>在售</option>
-                    <option>已下架</option>
-                </select>
-            </div>
-        </div>
-        <ul data-role="listview" class="ui-listview list-with-button dish-list">
+        <ul data-role="listview" class="list-click-edit">
             <li>
-                <img class="dish-img" src="img/placeholder.png">
-                <div class="dish-content-wrap">
-                    <h4 class="dish-name">菜品名字</h4>
-                    <span class="dish-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-                    <p class="dish-price">36.0<span>元</span></p>
-                </div>
-                <div class="ctrl-wrap">
-                    <a href="edit-dish.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline pause-sale-btn" data-textonly="true" data-textvisible="true" data-msgtext="商品已下架" data-inline="true"></a>
-                    <a href="delete-dish.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
-                </div>
-                <span class="clear"></span>
+                <a href="index-dish-category.html" data-transition="slide">
+                    <label>选择分类</label>
+                    <p>招牌菜</p>
+                </a>
             </li>
             <li>
-                <img class="dish-img" src="img/placeholder.png">
-                <div class="dish-content-wrap">
-                    <h4 class="dish-name">菜品名字</h4>
-                    <span class="dish-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-                    <p class="dish-price">36.0<span>元</span></p>
-                </div>
-                <div class="ctrl-wrap">
-                    <a href="edit-dish.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline pause-sale-btn" data-textonly="true" data-textvisible="true" data-msgtext="商品已下架" data-inline="true"></a>
-                    <a href="delete-dish.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
-                </div>
-                <span class="clear"></span>
+                <a href="edit-content.html" data-transition="slide">
+                    <label>菜品名称</label>
+                    <p>清蒸鲈鱼</p>
+                </a>
             </li>
             <li>
-                <img class="dish-img" src="img/placeholder.png">
-                <div class="dish-content-wrap">
-                    <h4 class="dish-name">菜品名字</h4>
-                    <span class="dish-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-                    <p class="dish-price">36.0<span>元</span></p>
-                </div>
-                <div class="ctrl-wrap">
-                    <a href="edit-dish.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline pause-sale-btn" data-textonly="true" data-textvisible="true" data-msgtext="商品已下架" data-inline="true"></a>
-                    <a href="delete-dish.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
-                </div>
-                <span class="clear"></span>
+                <a href="edit-content.html" data-transition="slide">
+                    <label>菜品说明</label>
+                    <p>口味属于咸鲜。清蒸鲈鱼是广东省汉族传统名菜之一</p>
+                </a>
+            </li>
+            <li data-role="fieldcontain">
+                <label>菜品价格</label>
+                <input data-corners="false" type="number" value="" data-clear-btn="false" data-clear-btn-text="" placeholder="单位:元">
             </li>
             <li>
-                <img class="dish-img" src="img/placeholder.png">
-                <div class="dish-content-wrap">
-                    <h4 class="dish-name">菜品名字</h4>
-                    <span class="dish-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-                    <p class="dish-price">36.0<span>元</span></p>
-                </div>
-                <div class="ctrl-wrap">
-                    <a href="edit-dish.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline pause-sale-btn" data-textonly="true" data-textvisible="true" data-msgtext="商品已下架" data-inline="true"></a>
-                    <a href="delete-dish.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
-                </div>
-                <span class="clear"></span>
-            </li>
-            <li>
-                <img class="dish-img" src="img/placeholder.png">
-                <div class="dish-content-wrap">
-                    <h4 class="dish-name">菜品名字</h4>
-                    <span class="dish-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-                    <p class="dish-price">36.0<span>元</span></p>
-                </div>
-                <div class="ctrl-wrap">
-                    <a href="edit-dish.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-arrow-thin-down ui-btn-icon-notext ui-btn-inline pause-sale-btn" data-textonly="true" data-textvisible="true" data-msgtext="商品已下架" data-inline="true"></a>
-                    <a href="delete-dish.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
-                </div>
-                <span class="clear"></span>
+                <a href="edit-content.html" data-transition="slide">
+                    <label>菜品图片</label>
+                </a>
             </li>
         </ul>
     </div>
-    <script type="text/javascript">
-        $(function(){
-            $(document).on("click", ".pause-sale-btn", function() {
-                var $this = $( this ),
-                theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
-                msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
-                textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
-                textonly = !!$this.jqmData( "textonly" );
-                html = $this.jqmData( "html" ) || "";
-                $.mobile.loading( "show", {
-                    text: msgText,
-                    textVisible: textVisible,
-                    theme: theme,
-                    textonly: textonly,
-                    html: html
-                });
-                setTimeout(function(){
-                    $.mobile.loading( "hide" );
-                }, 1000)
-            })
-        });
-    </script>
 </div>
