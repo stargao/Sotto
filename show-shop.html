@@ -11,7 +11,7 @@
             <li><a href="new-category.html" page-transtion="slideup">分类管理</a></li>
             <li><a href="index-dish.html" page-transtion="slideup">菜品管理</a></li>
             <li data-role="list-divider">其他</li>
-            <li><a href="index.html" data-transition="flip">退出登录</a></li>
+            <li><a href="index.html" data-transition="flip" class="log-out-btn">退出登录</a></li>
         </ul>
     </div>
     <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
@@ -24,13 +24,19 @@
             <li>
                 <a href="#edit-content.html" data-transition="slide">
                     <label>店铺名字</label>
-                    <p>巴蜀崽火锅东光店</p>
+                    <p class="shop-name"></p>
                 </a>
             </li>
             <li>
                 <a href="#edit-content.html" data-transition="slide">
                     <label>店铺地址</label>
-                    <p>锦江区锦华路一段185-191号</p>
+                    <p class="shop-address"></p>
+                </a>
+            </li>
+            <li>
+                <a href="edit-content.html" data-transition="slide">
+                    <label>店铺分类</label>
+                    <p class="shop-category"></p>
                 </a>
             </li>
             <li>
@@ -46,4 +52,22 @@
             </li>
         </ul>
     </div>
+    <script>
+        function onLoadShopSuccess(data, textStatus, jqXHR) {
+            var shop_name = data.collection[0].name;
+            var shop_address = data.collection[0].postal_address;
+            var shop_category = data.collection[0].cuisine_name
+            $('.shop-name').text(shop_name);
+            $('.shop-address').text(shop_address);
+            $('.shop-category').text(shop_category);
+        }
+
+        function onLoadShopFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        $.get(window.shopLink,
+                {},
+                onLoadShopSuccess,'json').fail(onLoadShopFailure);
+    </script>
 </div>

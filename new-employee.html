@@ -2,36 +2,106 @@
     <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
         <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
         <h1 class="header-title">新增员工</h1>
-        <a href="/" class="ui-btn ui-btn-inline ui-btn-d ui-clear ui-mini ui-btn-right top-btn" data-transition="slide">保 存</a>
+        <a href="#save" class="ui-btn ui-btn-inline ui-btn-d ui-clear ui-mini ui-btn-right top-btn" data-transition="slide">保 存</a>
     </div>
     <div data-role="content">
-        <ul data-role="listview" class="list-click-edit">
+        <ul data-role="listview" class="list-click-edit new-employee-list">
             <li data-role="fieldcontain">
-                <a href="index-employee-type.html" data-transition="slide">
+                <a href="index-employee-position.html" data-transition="slide">
                     <label>员工类型</label>
-                    <p class="employee-type">服务员</p>
+                    <p class="employee-position"></p>
                 </a>
             </li>
             <li data-role="fieldcontain">
-                <a href="edit-content.html" data-transition="slide">
-                    <label>员工账号</label>
-                    <p></p>
-                </a>
+                <label>员工账号</label>
+                <input data-corners="false" type="text" value="" data-clear-btn="false" data-clear-btn-text="" class="employee-account">
+            </li>
+            <li data-role="fieldcontain">
+                <label>手机号码</label>
+                <input data-corners="false" type="tel" value="" data-clear-btn="false" data-clear-btn-text="" class="employee-phone">
             </li>
             <li data-role="fieldcontain">
                 <label>账号密码</label>
-                <input data-corners="false" type="password" value="" data-clear-btn="false" data-clear-btn-text="">
+                <input data-corners="false" type="password" value="" data-clear-btn="false" data-clear-btn-text="" class="employee-password">
             </li>
             <li data-role="fieldcontain">
                 <label>再次确认密码</label>
-                <input data-corners="false" type="password" value="" data-clear-btn="false" data-clear-btn-text="">
+                <input data-corners="false" type="password" value="" data-clear-btn="false" data-clear-btn-text="" class="employee-re-password">
             </li>
-            <li>
+            <!--li class="employee-binding-desk">
                 <a href="edit-table-binding.html" data-transition="slide">
                     <label>负责桌号</label>
-                    <p></p>
+                    <p class="employee-tables"></p>
                 </a>
-            </li>
+            </li-->
         </ul>
     </div>
+    <script type="text/javascript">
+        var newEmplpoyeeLine = $('.new-employee .new-employee-list');
+        var newEmployeePosition;
+        switch(window.employeePosition)
+        {
+            case 'c':
+            newEmployeePosition = '收银员';
+            break;
+            case 'w':
+            newEmployeePosition = '服务员';
+            break;
+            case 'k':
+            newEmployeePosition = '后厨';
+            break;
+            default:
+            break;
+        }
+        $('p.employee-position').text(newEmployeePosition);
+
+        function onCreateEmployeeSuccess(data, textStatus, jqXHR) {
+            //console.info('id is '+data.collection[0].id);
+            //Commented the function of bind tables for the waiters.
+            /*if(window.employeePosition == 'w') {
+                window.newWaiterLink = data.collection[0].waiter_designatings_link;
+                $.mobile.changePage( "new-employee-tables-binding.html", { transition: "flip", changeHash: true });
+            }else{
+                iosOverlay({
+                    text: "新账号添加成功",
+                    duration: 1200,
+                    icon: 'img/check.png'
+                    //spinner: spinner
+                });
+                setTimeout(function(){
+                    window.history.back();
+                }, 1600)
+            }*/
+            //Show the common tips for all types account.
+            iosOverlay({
+                    text: "新账号添加成功",
+                    duration: 1200,
+                    icon: 'img/check.png'
+                    //spinner: spinner
+                });
+                setTimeout(function(){
+                    window.history.back();
+                }, 1600)
+            window.employeePosition = '';
+        }
+
+        function onCreateEmployeeFailure(jqXHR, textStatus, errorThrown) {
+            var json = JSON.parse(jqXHR.responseText);
+            //console.log(json.message);
+        }
+
+        function createEmployee() {
+            var newEmployeeCount = $('.employee-account').val();
+            var newEmployeePhone = $('.employee-phone').val();
+            var newEmployeePosition = window.employeePosition;
+            var newEmployeePwd = $('.employee-password').val();
+            var newEmployeeRepwd = $('.employee-re-password').val();
+            //var newEmployeeTables = $('.employee-tables').text();
+            $.post(window.employeeLink,
+                {session_id: window.session_id, name: newEmployeeCount, mobile_phone_number: newEmployeePhone, position: newEmployeePosition, password: newEmployeePwd, password_confirmation: newEmployeeRepwd},
+                onCreateEmployeeSuccess,'json').fail(onCreateEmployeeFailure);
+        }
+
+        $('.new-employee a.top-btn').click(createEmployee);
+    </script>
 </div>

@@ -2,27 +2,83 @@
     <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
         <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
         <h1 class="header-title">选择桌号</h1>
-        <a href="#" class="ui-btn ui-btn-inline ui-btn-d ui-clear ui-mini ui-btn-right top-btn">保 存</a>
+        <!--a href="#" class="ui-btn ui-btn-inline ui-btn-d ui-clear ui-mini ui-btn-right top-btn">保 存</a-->
     </div>
     <div data-role="content" class="select-list-wrap">
-        <ul data-role="listview" class="select-list">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li>10</li>
-        </ul>
+        <ul data-role="listview" class="select-list"></ul>
     </div>
-    <script>
-        $(function(){
-            $('.select-list li').click(function(){
-                $(this).toggleClass('selected');
-            });
-        })
+    <script id="index-table-list-binding-item-template" type="text/html">
+        <li class="ui-li-static ui-body-inherit"><span class="desk-count"></span>, <span class="desk-seat"></span>人桌</li>
+    </script>
+    <script type="text/javascript">
+    console.info(window.EmployeeTableLink);
+        var tablesBindingLine = $('script#index-table-list-binding-item-template').html();
+        function onIndexTablesSelectSuccess(data, textStatus, jqXHR) {
+            //data.size;
+            var listView = $('.select-list-page ul.select-list');
+            $.get(window.EmployeeTableLink, {}, function(data2, textStatus2, jqXHR2) {
+                var selectedTableIds = $.map(data2.collection, function(employeeTable, index)
+                    {
+                        return employeeTable.table_id;
+                    });
+                $.each(data.collection, function(index, item)
+                {
+                    var line = $(tablesBindingLine);
+                    line.data('id', item.id);
+                    line.data('link', item.link);
+                    line.find('span.desk-count').text(item.name);
+                    line.find('span.desk-seat').text(item.seat_count);
+
+                    if ($.inArray(item.id, selectedTableIds)>=0)
+                    {
+                        line.addClass('selected');
+                    }
+                    listView.append(line);
+                });
+            }, 'json');//.fail(onIndexEmployeeTableFailure);
+            
+        }
+
+        function onIndexTablesSelectFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        function onUpdateTablesBindingSuccess(data, textStatus, jqXHR) {
+
+        }
+
+        function onUpdateTablesBindingFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        function onDelTablesBindingSuccess(data, textStatus, jqXHR) {
+
+        }
+
+        function onDelTablesBindingFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        $('.select-list-page .select-list').on('click', 'li', function(){
+            var selectedItemID = $(this).data('id');
+            console.info($(this).data('link'));
+            if($(this).hasClass('selected')){
+                $(this).removeClass('selected');
+                $.post($(this).data('link'),
+                    {_method: 'delete', session_id: window.sessionID, table_id: selectedItemID},
+                    onDelTablesBindingSuccess, 'json').fail(onDelTablesBindingFailure);
+            }else{
+                $(this).addClass('selected');
+                $.post(window.EmployeeTableLink,
+                    {session_id: window.sessionID, table_id: selectedItemID},
+                    onUpdateTablesBindingSuccess, 'json').fail(onUpdateTablesBindingFailure);
+            }
+            
+            
+        });
+
+        $.get(window.tablesLink,
+                {},
+                onIndexTablesSelectSuccess,'json').fail(onIndexTablesSelectFailure);
     </script>
 </div>

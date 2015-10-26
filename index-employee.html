@@ -11,11 +11,11 @@
             <li><a href="new-category.html" page-transtion="slideup">分类管理</a></li>
             <li><a href="index-dish.html" page-transtion="slideup">菜品管理</a></li>
             <li data-role="list-divider">其他</li>
-            <li><a href="index.html" data-transition="flip">退出登录</a></li>
+            <li><a href="index.html" data-transition="flip" class="log-out-btn">退出登录</a></li>
         </ul>
     </div>
     <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
-        <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
+        <a href="#" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
         <h1 class="header-title">员工账号</h1>
         <a href="#panel-menu" data-icon="ion-navicon-round" data-iconpos="notext" class="ui-btn-right"></a>
     </div>
@@ -24,52 +24,134 @@
             <a href="new-employee.html" class="ui-outline ui-btn ui-btn-d ui-btn-block" data-transition="slide">新增员工账号</a>
         </div>
         <div class="cutline"></div>
-        <ul data-role="listview" class="ui-listview list-with-button employee-list">
-            <li>
-                <div class="employee-content">
-                    <div class="content-line">
-                         <span class="content-title">用户名: </span>
-                         <p>employee-name-1</p>
-                         <span class="clear"></span>
-                    </div>
-                    <div class="content-line">
-                         <span class="content-title">员工类型: </span>
-                         <p>服务员</p>
-                         <span class="clear"></span>
-                    </div>
-                    <div class="content-line">
-                         <span class="content-title">负责桌号: </span>
-                         <p>12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22</p>
-                         <span class="clear"></span>
-                    </div>
-                </div>
-                
-                <div class="ctrl-wrap">
-                    <a href="edit-employee.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="delete-employee.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
-                </div>
-                <span class="clear"></span>
-            </li>
-            <li>
-                <div class="employee-content">
-                    <div class="content-line">
-                         <span class="content-title">用户名: </span>
-                         <p>employee-name-2</p>
-                         <span class="clear"></span>
-                    </div>
-                    <div class="content-line">
-                         <span class="content-title">员工类型: </span>
-                         <p>后厨</p>
-                         <span class="clear"></span>
-                    </div>
-                </div>
-                
-                <div class="ctrl-wrap">
-                    <a href="edit-employee.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline"></a>
-                    <a href="delete-employee.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline"></a>
-                </div>
-                <span class="clear"></span>
-            </li>
-        </ul>
+        <ul data-role="listview" class="ui-listview list-with-button employee-list"></ul>
     </div>
+    <script id="index-employee-list-item-template" type="text/html">
+        <li>
+            <div class="employee-content">
+                <div class="content-line">
+                    <span class="content-title">用户名: </span>
+                    <p class="employee-account"></p>
+                    <span class="clear"></span>
+                </div>
+                <div class="content-line">
+                    <span class="content-title">手机号码: </span>
+                    <p class="employee-phone"></p>
+                    <span class="clear"></span>
+                </div>
+                <div class="content-line">
+                    <span class="content-title">员工类型: </span>
+                    <p class="employee-position"></p>
+                    <span class="clear"></span>
+                </div>
+                <!--div class="content-line employee-binding-desk">
+                    <span class="content-title">负责桌号: </span>
+                    <p class="employee-binding-desk"><span></span></p>
+                    <span class="clear"></span>
+                </div-->
+            </div>
+                
+            <div class="ctrl-wrap">
+                <a href="edit-employee.html" data-transition="slideup" class="ui-outline ui-btn ui-btn-d ui-icon-ion-ios-compose-outline ui-btn-icon-notext ui-btn-inline edit-employee-btn"></a>
+                <a href="#delete-employee.html" data-rel="dialog" data-position-to="window" data-transition="flip" class="ui-outline ui-btn ui-btn-f ui-icon-ion-ios-trash-outline ui-btn-icon-notext ui-btn-inline del-employee-btn"></a>
+            </div>
+            <span class="clear"></span>
+        </li>
+    </script>
+    <script type="text/javascript">
+        var employeeLine = $('script#index-employee-list-item-template').html();
+        /*function onIndexEmployeeBindingTablesSuccess(data, textStatus, jqXHR) {
+            var listView = $('.index-employee ul.employee-list');
+            $.each(data.collection, function(index, item) {
+                var bindingTables = $(employeeLine);
+                bindingTables.find('.employee-binding-desk span').text(item.table_name);
+                listView.append(bindingTables);
+            });
+        }*/
+
+        function onIndexEmployeeBindingTablesSuccess(data, textStatus, jqXHR) { 
+            
+        }
+
+        function onIndexEmployeeBindingTablesFailure(jqXHR, textStatus, errorThrown) {
+            return false;
+        }
+        
+        function onIndexEmployeesSuccess(data, textStatus, jqXHR) {
+            var listView = $('.index-employee ul.employee-list');
+            $.each(data.collection, function(index, item)
+                {
+                    var line = $(employeeLine);
+                    line.data('id', item.id);
+                    line.data('link', item.link);
+                    line.data('user-id', item.user_id);
+                    line.data('position', item.position);
+                    line.data('waiter-table', item.waiter_designatings_link)
+                    line.find('.employee-account').text(item.name);
+                    var employeePosition;
+                    switch(item.position)
+                    {
+                        case 'c':
+                        employeePosition = '收银员';
+                        //line.find('.employee-binding-desk').addClass('hidden');
+                        break;
+                        case 'w':
+                        employeePosition = '服务员';
+                        //line.find('.employee-binding-desk').removeClass('hidden');
+                        $.get(item.waiter_designatings_link,
+                            {session_id: window.sessionId},
+                            onIndexEmployeeBindingTablesSuccess, 'json').fail(onIndexEmployeeBindingTablesFailure);
+                        break;
+                        case 'k':
+                        employeePosition = '后厨';
+                        //line.find('.employee-binding-desk').addClass('hidden');
+                        break;
+                        default:
+                    }
+                    line.find('.employee-phone').text(item.mobile_phone_number);
+                    line.find('.employee-position').text(employeePosition);
+                    listView.append(line);
+                });
+        }
+
+        function onIndexEmployeesFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        $.get(window.employeeLink,
+                {},
+                onIndexEmployeesSuccess,'json').fail(onIndexEmployeesFailure);
+
+
+        function onIndexTablesFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        function delEmployee() {
+            window.employeeDelLink = $(this).closest('li').data('link');
+            var delConfirm = confirm("确实要删除这个账户吗？");
+            if (delConfirm == true) {
+                $(this).closest('li').fadeOut();
+                $.post(window.employeeDelLink,
+                    {_method: 'delete', session_id: window.sessionId},
+                    function() {}, 'json');
+            } else {
+                return false;
+            }
+        }
+
+        //Delete a account function
+        $('.employee-list').on('click', 'a.del-employee-btn', delEmployee);
+
+        $('ul.employee-list').on('click', 'a.edit-employee-btn', function(){
+            window.modifyEmployeeID = $(this).closest('li').data('id');
+            window.modifyEmployeeLink = $(this).closest('li').data('link');
+            window.modifyEmployeeUserID = $(this).closest('li').data('user-id');
+            window.EmployeeTableLink = $(this).closest('li').data('waiter-table');
+            window.modifyEmployeePosition = $(this).closest('li').find('.employee-position').text();
+            window.modifyEmployeeName = $(this).closest('li').find('.employee-account').text();
+            window.modifyEmployeePhone = $(this).closest('li').find('.employee-phone').text();
+            //console.info(window.EmployeeTableLink);        
+        });
+    </script>
 </div>

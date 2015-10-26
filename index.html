@@ -7,6 +7,7 @@
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
     <link rel="stylesheet" href="css/jquery.mobile.ios.theme.css" />
+    <link rel="stylesheet" href="css/iosOverlay.css" />
     <link rel="stylesheet" href="css/app.css" />
     <title>乐摇肴后台管理系统</title>
 </head>
@@ -26,14 +27,58 @@
                         <label>密码:</label>
                         <input data-corners="false" id="user-pwd" type="password" value="" data-clear-btn-text="" data-clear-btn="true" placeholder="">
                     </li>
-                    <button type="submit" class="ui-btn ui-btn-d">登录</button>
+                    <button type="button" class="ui-btn ui-btn-d" id="login-btn">登录</button>
                     <a href="#" class="ui-btn">忘记密码?</a>
-                    <a href="index-order.html" class="ui-btn" data-transition="flip">下一页</a>
+                    <!--a href="index-order.html" class="ui-btn" data-transition="flip">下一页</a-->
                 </ul>
             </form>
         </div>
     </div>
     <script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/vendor/jquery.mobile.js"></script>
+    <script type="text/javascript" src="js/vendor/iosOverlay.js"></script>
+    <script type="text/javascript" src="js/vendor/spin.min.js"></script>
+    <script>
+        $.support.cors = true;
+        $.mobile.allowCrossDomainPages = true;
+
+        function onCreateSessionFailure(jqXHR, textStatus, errorThrown) {
+            var json = JSON.parse(jqXHR.responseText);
+            //console.log(json.message);
+            alert(json.message);
+        }
+
+        function onCreateSessionSuccess(data, textStatus, jqXHR) {
+            console.log(data.collection[0]);
+            window.sessionId = data.collection[0].id;
+            window.sessionLink = data.collection[0].session_link;
+            window.shopLink = data.collection[0].shop_link;
+            window.categoriesLink = data.collection[0].categories_link;
+            window.dishesLink = data.collection[0].dishes_link;
+            window.tableBulksLink = data.collection[0].table_bulks_link;
+            window.tablesLink = data.collection[0].tables_link;
+            window.employeeLink = data.collection[0].employees_link;
+            $.mobile.changePage( "index-order.html", { transition: "flip", changeHash: true });
+        }
+
+        function userLogin() {
+            var userName = $('#user-name').val();
+            var userPwd = $('#user-pwd').val();
+            /*$.post('http://sammartini-alpha.xhjdcd.com/shop-api/v1/sessions.json',
+                {login_name: userName, login_password: userPwd},
+                onCreateSessionSuccess,'json').fail(onCreateSessionFailure);
+            }*/
+            $.ajax({
+                type : "POST",
+                url : "http://sammartini-alpha.xhjdcd.com/shop-api/v1/sessions.json",
+                dataType : "json",
+                data: {login_name: userName, login_password: userPwd},
+                success : onCreateSessionSuccess,
+                fail: onCreateSessionFailure
+            });
+        }
+
+        $('.ui-btn').click(userLogin);
+    </script>
 </body>
 </html>

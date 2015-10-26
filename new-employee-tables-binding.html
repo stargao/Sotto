@@ -1,0 +1,84 @@
+<div data-role="page" class="new-employee-tables-binding-tables-page">
+    <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
+        <a href="/index-employee.html" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
+        <h1 class="header-title">绑定桌号</h1>
+        <!--a href="#" class="ui-btn ui-btn-inline ui-btn-d ui-clear ui-mini ui-btn-right top-btn">保 存</a-->
+    </div>
+    <div data-role="content" class="select-list-wrap">
+        <ul data-role="listview" class="select-list"></ul>
+    </div>
+    <script id="index-table-list-binding-item-template" type="text/html">
+        <li class="ui-li-static ui-body-inherit"><span class="desk-count"></span>, <span class="desk-seat"></span>人桌</li>
+    </script>
+    <script type="text/javascript">
+    //console.info(window.EmployeeTableLink);
+        var tablesBindingLine = $('script#index-table-list-binding-item-template').html();
+        function onIndexNewEmployeeTablesSelectSuccess(data, textStatus, jqXHR) {
+            //data.size;
+            var listView = $('.new-employee-tables-binding-tables-page ul.select-list');
+            $.each(data.collection, function(index, item)
+                {
+                    var line = $(tablesBindingLine);
+                    line.data('id', item.id);
+                    line.data('link', item.link);
+                    //line.data('table-id', item.id);
+                    //console.info('-----------'+item.id);
+                    line.find('span.desk-count').text(item.name);
+                    line.find('span.desk-seat').text(item.seat_count);
+                    listView.append(line);
+                });
+        }
+
+        function onIndexNewEmployeeTablesSelectFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        function onUpdateNewEmployeeTablesBindingSuccess(data, textStatus, jqXHR) {
+            var li = $('li[data-id="'+data.collection[0].table_id+'"]');
+            //console.log(data.collection[0].table_id);
+            console.log('update this is ++++++++++++++++++++');
+            //console.log(li[0]);
+            li.data('link', data.collection[0].link);
+            //console.info(li[0]);
+            //console.log(data.link);
+            //console.log(data);
+        }
+
+        function onUpdateNewEmployeeTablesBindingFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        function onDelNewEmployeeTablesBindingSuccess(data, textStatus, jqXHR) {
+
+        }
+
+        function onDelNewEmployeeTablesBindingFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        $('.new-employee-tables-binding-tables-page .select-list').on('click', 'li', function(event){
+            console.log('-------------- event.currentTarget = ');
+            console.log(event.currentTarget);
+            //console.log('click this is --------');
+            //console.log(this);
+            var clicked = $(event.currentTarget);
+            var selectedItemID = clicked.data('id');
+            if(clicked.hasClass('selected')){
+                clicked.removeClass('selected');
+                $.post(clicked.data('link'),
+                    {_method: 'delete', session_id: window.sessionID, table_id: selectedItemID},
+                    onDelNewEmployeeTablesBindingSuccess, 'json').fail(onDelNewEmployeeTablesBindingFailure);
+            }else{
+                clicked.addClass('selected');
+                $.post(window.newWaiterLink,
+                    {session_id: window.sessionID, table_id: selectedItemID},
+                    onUpdateNewEmployeeTablesBindingSuccess, 'json').fail(onUpdateNewEmployeeTablesBindingFailure);
+            }    
+            
+        });
+
+        $.get(window.tablesLink,
+                {},
+                onIndexNewEmployeeTablesSelectSuccess,'json').fail(onIndexNewEmployeeTablesSelectFailure);
+    </script>
+</div>

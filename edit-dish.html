@@ -1,6 +1,6 @@
 <div data-role="page" class="edit-dish">
     <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
-        <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
+        <a href="#" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
         <h1 class="header-title">修改菜品</h1>
         <a href="/" data-rel="back" class="ui-btn ui-btn-inline ui-btn-d ui-clear ui-mini ui-btn-right top-btn" data-transition="slidedown">保 存</a>
     </div>
@@ -9,24 +9,20 @@
             <li>
                 <a href="index-dish-category.html" data-transition="slide">
                     <label>选择分类</label>
-                    <p>招牌菜</p>
-                </a>
-            </li>
-            <li>
-                <a href="edit-content.html" data-transition="slide">
-                    <label>菜品名称</label>
-                    <p>清蒸鲈鱼</p>
-                </a>
-            </li>
-            <li>
-                <a href="edit-content.html" data-transition="slide">
-                    <label>菜品说明</label>
-                    <p>口味属于咸鲜。清蒸鲈鱼是广东省汉族传统名菜之一</p>
+                    <p class="dish-categroy"></p>
                 </a>
             </li>
             <li data-role="fieldcontain">
+                <label>菜品名称</label>
+                <input class="dish-name" data-corners="false" type="text" value="" data-clear-btn="false" data-clear-btn-text="">
+            </li>
+            <li data-role="fieldcontain">
+                <label>菜品说明</label>
+                <input class="dish-desc" data-corners="false" type="text" value="" data-clear-btn="false" data-clear-btn-text="">
+            </li>
+            <li data-role="fieldcontain">
                 <label>菜品价格</label>
-                <input data-corners="false" type="number" value="" data-clear-btn="false" data-clear-btn-text="" placeholder="单位:元">
+                <input class="dish-price" data-corners="false" type="number" value="" data-clear-btn="false" data-clear-btn-text="" placeholder="单位:元">
             </li>
             <li>
                 <a href="edit-content.html" data-transition="slide">
@@ -35,4 +31,44 @@
             </li>
         </ul>
     </div>
+    <script>
+        var editCategoryID;
+        var editCategoryName = $('.edit-dish .dish-categroy');
+        if(window.selectCategoryName == '') {
+            editCategoryName.text(window.modifyDishCategoryName);
+            editCategoryID = window.modifyDishCategoryID;
+        }else{
+            editCategoryName.text(window.selectCategoryName);
+            editCategoryID = window.selectCategoryID;
+
+        }
+        //console.info(editCategoryName.text());
+        //console.info(editCategoryID);
+        $('.edit-dish .dish-name').val(window.modifyDishName);
+        $('.edit-dish .dish-desc').val(window.modifyDishIntro);
+        $('.edit-dish .dish-price').val(window.modifyDishPrice);
+
+        function onUpdateDishSuccess(data, textStatus, jqXHR) {
+            iosOverlay({
+                text: "菜品更新成功",
+                duration: 1200,
+                icon: 'img/check.png'
+            });
+        }
+
+        function onUpdateDishFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        function updateDish() {
+            var editDishName = $('.edit-dish .dish-name').val();
+            var editDishIntro = $('.edit-dish .dish-desc').val();
+            var editDishPrice = $('.edit-dish .dish-price').val();
+            $.post(window.modifyDishLink,
+                {_method: 'put', session_id: window.sessionId, category_id: editCategoryID, name: editDishName, introduction: editDishIntro, price: editDishPrice},
+                onUpdateDishSuccess, 'json').fail(onUpdateDishFailure);
+        }
+
+        $('.edit-dish .top-btn').click(updateDish);
+    </script>
 </div>

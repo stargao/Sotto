@@ -2,33 +2,127 @@
     <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
         <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
         <h1 class="header-title">修改账号</h1>
-        <a href="/" class="ui-btn ui-btn-inline ui-btn-d ui-clear ui-mini ui-btn-right top-btn" data-transition="slidedown">保 存</a>
+        <a href="#" class="ui-btn ui-btn-inline ui-btn-d ui-clear ui-mini ui-btn-right top-btn" data-transition="slidedown">保 存</a>
     </div>
     <div data-role="content">
-        <ul data-role="listview" class="list-click-edit">
+        <ul data-role="listview" class="list-click-edit edit-employee-list">
             <li data-role="fieldcontain">
-                <a href="edit-content.html" data-transition="slide">
+                <a href="index-employee-position.html" data-transition="slide">
                     <label>员工类型</label>
-                    <p class="employee-type">服务员</p>
+                    <p class="edit-employee-position"></p>
                 </a>
             </li>
             <li data-role="fieldcontain">
-                <a href="edit-content.html" data-transition="slide">
-                    <label>员工账号</label>
-                    <p>employee-name-1</p>
+                <label>员工账号</label>
+                <input class="edit-employee-name" type="text" data-corners="false" type="text" value="" data-clear-btn="false" data-clear-btn-text="">
+            </li>
+            <li data-role="fieldcontain">
+                <a data-transition="slide" href="#edit-content.html" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <label>员工手机号</label>
+                    <p class="edit-employee-phone"></p>
                 </a>
             </li>
+            <!--li class="edit-employee-binding-desk">
+                <a href="edit-table-binding.html" data-transition="slide">
+                    <label>负责桌号</label>
+                    <p></p>
+                </a>
+            </li-->
             <li data-role="fieldcontain">
                 <a href="edit-password.html" data-transition="slide">
                     <label>修改密码</label>
                 </a>
             </li>
-            <li>
-                <a href="edit-table-binding.html" data-transition="slide">
-                    <label>负责桌号</label>
-                    <p></p>
-                </a>
-            </li>
         </ul>
     </div>
+    <script id="table-item-template" type="text/html">
+        <span><span>
+    </script>
+    <script type="text/javascript">
+        var editEmployeePosition;
+        var editEmployeePositionName;
+        var editEmployeeLine = $('.edit-employee .edit-employee-list');
+        if(typeof(window.employeePosition) == 'undefined' || window.employeePosition == ''){
+            $('.edit-employee-list .edit-employee-position').text(window.modifyEmployeePosition);
+            editEmployeePosition = window.modifyEmployeePosition;
+        }else{
+            editEmployeePosition = window.employeePosition;
+            switch(window.employeePosition)
+            {
+                case 'c':
+                editEmployeePositionName = '收银员';
+                editEmployeeLine.find('.edit-employee-binding-desk').addClass('hidden');
+                break;
+                case 'w':
+                editEmployeePositionName = '服务员';
+                editEmployeeLine.find('.edit-employee-binding-desk').removeClass('hidden');
+                break;
+                case 'k':
+                editEmployeePositionName = '后厨';
+                editEmployeeLine.find('.edit-employee-binding-desk').addClass('hidden');
+                break;
+                default:
+                break;
+            }
+            $('.edit-employee-list .edit-employee-position').text(editEmployeePositionName);
+        }
+        $('.edit-employee-list .edit-employee-name').val(window.modifyEmployeeName);
+        $('.edit-employee-list .edit-employee-phone').text(window.modifyEmployeePhone);
+
+        function onUpdateEmployeeSuccess(data, textStatus, jqXHR) {
+            iosOverlay({
+                text: "账号更新成功",
+                duration: 1200,
+                icon: 'img/check.png'
+            });
+            setTimeout(function(){
+                window.history.back();
+            }, 1200);
+        }
+
+        function onUpdateEmployeeFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        function updateEmployee() {
+            var editEmployeeName = $('.edit-employee-list .edit-employee-name').val();
+            $.post(window.modifyEmployeeLink,
+                {_method: 'put', session_id: window.sessionId, name: editEmployeeName, position: editEmployeePosition},
+                onUpdateEmployeeSuccess, 'json').fail(onUpdateEmployeeFailure);
+        }
+
+        var tableItem = $('script#table-item-template').html();
+        function onIndexEmployeeBindingTablesSuccess(data, textStatus, jqXHR) {
+            //data.size;
+            var showBindingTable = $('ul.edit-employee-list li.edit-employee-binding-desk a p');
+            $.each(data.collection, function(index, item)
+                {
+                    var tableName = $(tableItem);
+                    tableName.data('table-id', item.table_id);
+                    tableName.text(item.table_name+', ');
+                    showBindingTable.append(tableName);
+                });
+        }
+
+        //Get employee binding tables list
+        /*function onIndexEmployeeBindingTablesSuccess(data, textStatus, jqXHR) {
+            $.each(data.collection, function(index, item) {         
+                var bindingTables = $('.edit-employee ul.edit-employee-list li.edit-employee-binding-desk a p span');   
+                bindingTables.text(item.table_name);
+                console.log(bindingTables);
+                $('.edit-employee ul.edit-employee-list li.edit-employee-binding-desk a p').append(bindingTables);
+            });
+        }*/
+
+        function onIndexEmployeeBindingTablesFailure(jqXHR, textStatus, errorThrown) {
+            return false;
+        }
+
+        $.get(window.EmployeeTableLink,
+            {session_id: window.sessionId},
+            onIndexEmployeeBindingTablesSuccess, 'json').fail(onIndexEmployeeBindingTablesFailure);
+
+        //Save function
+        $('.edit-employee .top-btn').click(updateEmployee);
+    </script>
 </div>

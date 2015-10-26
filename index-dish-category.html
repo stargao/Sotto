@@ -1,21 +1,47 @@
 <div data-role="page" class="select-list-page">
     <div data-role="header" data-tap-toggle="false" data-position="fixed" data-transition="slide">
-        <a href="/" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
+        <a href="#" data-rel="back" data-icon="ion-chevron-left" data-iconpos="notext" data-ajax="false" class="ui-btn-left"></a>
         <h1 class="header-title">选择分类</h1>
         <!--a href="#" class="ui-btn-right top-right-btn">保 存</a-->
     </div>
     <div data-role="content" class="select-list-wrap">
-        <ul data-role="listview" class="select-list">
-            <li>固定消费</li>
-            <li>招牌菜</li>
-        </ul>
+        <ul data-role="listview" class="select-list"></ul>
     </div>
-    <script>
-        $(function(){
-            $('.select-list li').click(function(){
-                $('.select-list li').removeClass('selected');
-                $(this).toggleClass('selected');
-            });
-        })
+    <script id="select-category-list-item-template" type="text/html">
+      <li class="ui-li-static ui-body-inherit"></li>
+    </script>
+    <script type="text/javascript">
+        var categorySelectLine = $('script#select-category-list-item-template').html();
+        function onIndexDishCategorySuccess(data, textStatus, jqXHR) {
+            //data.size;
+            var listView = $('.select-list-page ul.select-list');
+            $.each(data.collection, function(index, item)
+                {
+                    var line = $(categorySelectLine);
+                    line.data('id', item.id);
+                    line.data('link', item.link);
+                    line.text(item.name);
+                    listView.append(line);
+                });
+        }
+
+        function onIndexDishCategoryFailure(jqXHR, textStatus, errorThrown) {
+
+        }
+
+        $('ul.select-list').on('click', 'li.ui-li-static', function(){
+            $('.select-list li').removeClass('selected');
+            $(this).toggleClass('selected');
+            window.selectCategoryName = $(this).text();
+            window.selectCategoryID = $(this).data('id');
+            //console.info(window.selectCategoryID);
+            setTimeout(function(){
+                window.history.back();
+            }, 400);
+        });
+
+        $.get(window.categoriesLink,
+                {},
+                onIndexDishCategorySuccess,'json').fail(onIndexDishCategoryFailure);
     </script>
 </div>
